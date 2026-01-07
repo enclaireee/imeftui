@@ -52,22 +52,25 @@ export function DivisiSection() {
             >
               <motion.div
                 layoutId={`icon-container-${div.id}`}
+                layout="position"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-foreground/5 flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-foreground/10 transition-colors"
-                transition={{ duration: 0.3 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <div.icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
               </motion.div>
               <motion.h3
                 layoutId={`abbr-${div.id}`}
+                layout="position"
                 className="font-semibold text-foreground text-xs sm:text-sm mb-0.5 sm:mb-1"
-                transition={{ duration: 0.3 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 {div.abbr}
               </motion.h3>
               <motion.p
                 layoutId={`name-${div.id}`}
+                layout="position"
                 className="text-[10px] sm:text-xs text-muted-foreground line-clamp-2"
-                transition={{ duration: 0.3 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 {div.name}
               </motion.p>
@@ -126,23 +129,38 @@ export function DivisiSection() {
                     <div className="absolute bottom-4 left-6 flex items-center gap-3">
                       <motion.div
                         layoutId={`icon-container-${selectedDivisi.id}`}
+                        layout="position"
                         className="w-12 h-12 rounded-xl bg-background/90 backdrop-blur flex items-center justify-center shadow-lg"
-                        transition={{ duration: 0.3 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 30,
+                        }}
                       >
                         <selectedDivisi.icon className="w-6 h-6 text-foreground" />
                       </motion.div>
                       <div>
                         <motion.div
                           layoutId={`abbr-${selectedDivisi.id}`}
+                          layout="position"
                           className="font-bold text-lg text-foreground drop-shadow-sm"
-                          transition={{ duration: 0.3 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 30,
+                          }}
                         >
                           {selectedDivisi.abbr}
                         </motion.div>
                         <motion.div
                           layoutId={`name-${selectedDivisi.id}`}
+                          layout="position"
                           className="text-sm text-foreground/80 drop-shadow-sm"
-                          transition={{ duration: 0.3 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 30,
+                          }}
                         >
                           {selectedDivisi.name}
                         </motion.div>

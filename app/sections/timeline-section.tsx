@@ -85,54 +85,68 @@ export function TimelineSection() {
           </div>
         </div>
 
-        {/* Mobile Timeline */}
-        <div className="md:hidden space-y-3">
-          {timeline.map((item, index) => (
-            <motion.div
-              key={item.event}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`glass-card rounded-xl p-4 flex items-start gap-3 ${
-                item.status === "active" ? "ring-1 ring-primary/30" : ""
-              }`}
-            >
-              <div
-                className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold ${
-                  item.status === "active"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-foreground/5 text-foreground"
-                }`}
+        {/* Mobile Timeline - Vertical Line Design */}
+        <div className="md:hidden relative">
+          {/* Vertical Connecting Line */}
+          <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-border" />
+
+          <div className="space-y-0">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={item.event}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative flex gap-4 pb-6 last:pb-0"
               >
-                {index + 1}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between gap-2 mb-0.5">
-                  <h3 className="font-semibold text-foreground text-sm">
+                {/* Timeline Node */}
+                <div className="relative z-10 flex flex-col items-center">
+                  <div
+                    className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                      item.status === "active"
+                        ? "bg-primary shadow-lg shadow-primary/30"
+                        : "bg-background border-2 border-border"
+                    }`}
+                  >
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        item.status === "active"
+                          ? "bg-primary-foreground"
+                          : "bg-muted-foreground/50"
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 pt-0.5 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className={`text-xs font-medium ${
+                        item.status === "active"
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {item.date}
+                    </span>
+                    {item.status === "active" && (
+                      <Badge className="bg-primary/10 text-primary border-0 text-[10px] px-1.5 py-0">
+                        Aktif
+                      </Badge>
+                    )}
+                  </div>
+                  <h3 className="font-semibold text-foreground text-sm mb-0.5">
                     {item.event}
                   </h3>
-                  {item.status === "active" && (
-                    <Badge className="bg-primary/10 text-primary border-0 text-[10px] px-1.5 py-0">
-                      Aktif
-                    </Badge>
-                  )}
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  {item.description}
-                </p>
-                <span
-                  className={`text-xs mt-1 inline-block ${
-                    item.status === "active"
-                      ? "text-primary font-medium"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {item.date}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -10,10 +10,9 @@ import { RECRUITMENT_DEADLINE } from "@/app/data";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
-      <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-secondary/30 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-primary/20 rounded-full blur-[120px]" />
+      <div className="absolute top-1/3 left-1/3 w-100 h-100 bg-secondary/30 rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div

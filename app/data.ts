@@ -48,7 +48,7 @@ export const divisi: Divisi[] = [
     icon: GraduationCap,
     programs: ["Seminar Karir", "Workshop Technical"],
     addedValues: ["Skill Profesional", "Networking Industri"],
-    color: "from-blue-500/20 to-indigo-500/20",
+    color: "from-primary/20 to-primary/40",
   },
   {
     id: 2,
@@ -132,7 +132,7 @@ export const divisi: Divisi[] = [
     icon: HandHeart,
     programs: ["Bakti Sosial", "Mengajar Desa"],
     addedValues: ["Kepedulian Sosial", "Teamwork"],
-    color: "from-amber-500/20 to-yellow-500/20",
+    color: "from-secondary/20 to-secondary/10",
   },
   {
     id: 9,
@@ -144,7 +144,7 @@ export const divisi: Divisi[] = [
     icon: Cpu,
     programs: ["Lomba Teknologi", "Workshop Coding"],
     addedValues: ["Technical Skills", "Problem Solving"],
-    color: "from-cyan-500/20 to-blue-500/20",
+    color: "from-primary/20 to-primary/40",
   },
   {
     id: 10,

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useLayoutEffect } from "react";
+import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -38,20 +39,20 @@ export function Header() {
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
       <nav className="glass-card rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between backdrop-blur-xl">
         {/* Logo */}
-        <a href="#" className="font-bold text-lg text-foreground">
+        <Link href="#" className="font-bold text-lg text-foreground">
           IME<span className="text-primary">FTUI</span>
-        </a>
+        </Link>
 
         {/* Nav Links - Hidden on mobile */}
         <div className="hidden sm:flex items-center gap-6">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
