@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { REGISTRATION_FORM_URL } from "../data";
 
 export function CTASection() {
   return (
@@ -27,16 +28,17 @@ export function CTASection() {
               2026. Daftar sekarang dan mulai perjalananmu!
             </p>
             <Link
-            href="https://forms.gle/h8QMy68MRfBip7Qq5"
-            target="_blank"
-            rel="noopener noreferrer">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
               >
-              Daftar Sekarang
-              <ExternalLink className="w-5 h-5 ml-2" />
-            </Button>
+                Daftar Sekarang
+                <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
             </Link>
           </div>
         </motion.div>

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Countdown } from "@/components/countdown";
 import { Sparkles, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import { RECRUITMENT_DEADLINE } from "../data";
+import { RECRUITMENT_DEADLINE, REGISTRATION_FORM_URL } from "../data";
 
 export function HeroSection() {
   return (
@@ -120,21 +120,26 @@ export function HeroSection() {
 
           <div className="flex flex-row gap-3 sm:gap-4">
             <Link
-            href="https://forms.gle/h8QMy68MRfBip7Qq5"
-            target="_blank"
-            rel="noopener noreferrer">
-            <motion.div
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl glow"
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl glow"
                 >
-                Daftar Sekarang
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
-              </Button>
-            </motion.div>
+                  Daftar Sekarang
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
+                </Button>
+              </motion.div>
             </Link>
             <Button
               size="lg"

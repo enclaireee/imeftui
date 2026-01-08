@@ -7,7 +7,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background bg-noise flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      {/* Background effects */}
       <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-primary/20 rounded-full blur-[120px]" />
       <div className="absolute top-1/3 left-1/3 w-100 h-100 bg-secondary/30 rounded-full blur-[100px]" />
@@ -56,7 +55,7 @@ export default function Home() {
         </motion.div>
 
         {/* Description */}
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
