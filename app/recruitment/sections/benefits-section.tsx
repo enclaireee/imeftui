@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { benefits } from "@/app/data";
+import { benefits } from "../data";
 
 export function BenefitsSection() {
   return (

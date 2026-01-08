@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Sparkles, CheckCircle2, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { divisi, Divisi } from "@/app/data";
+import { divisi, Divisi } from "../data";
 
 export function DivisiSection() {
   const [selectedDivisi, setSelectedDivisi] = useState<Divisi | null>(null);

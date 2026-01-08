@@ -2,11 +2,11 @@
 
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
-import { gallery } from "@/app/data";
+import { gallery } from "../data";
 
 const MarqueeCard = ({ item }: { item: (typeof gallery)[0] }) => (
-  <div className="glass-card glass-card-hover rounded-2xl w-64 sm:w-80 h-48 sm:h-56 flex-shrink-0 relative overflow-hidden group cursor-pointer">
-    <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-foreground/10" />
+  <div className="glass-card glass-card-hover rounded-2xl w-64 sm:w-80 h-48 sm:h-56 shrink-0 relative overflow-hidden group cursor-pointer">
+    <div className="absolute inset-0 bg-linear-to-br from-foreground/5 to-foreground/10" />
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
       <span className="text-xs text-muted-foreground mb-1">
         {item.category}

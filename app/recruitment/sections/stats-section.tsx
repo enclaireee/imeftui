@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { stats } from "@/app/data";
+import { stats } from "../data";
 
 export function StatsSection() {
   return (

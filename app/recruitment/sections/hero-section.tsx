@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Countdown } from "@/components/countdown";
 import { Sparkles, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import { RECRUITMENT_DEADLINE } from "@/app/data";
+import { RECRUITMENT_DEADLINE } from "../data";
 
 export function HeroSection() {
   return (
@@ -13,6 +15,23 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-primary/20 rounded-full blur-[120px]" />
       <div className="absolute top-1/3 left-1/3 w-100 h-100 bg-secondary/30 rounded-full blur-[100px]" />
+
+      {/* Decorative Senior Logo - Left Side (hidden on mobile/tablet) */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="hidden lg:block absolute -left-[450px] top-1/2 -translate-y-1/2 w-[1000px] h-[130vh] pointer-events-none"
+      >
+        <Image
+          src="/seniortrsp.png"
+          alt=""
+          fill
+          sizes="1000px"
+          className="object-contain"
+          priority
+        />
+      </motion.div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
@@ -99,26 +118,35 @@ export function HeroSection() {
         >
           <Countdown targetDate={RECRUITMENT_DEADLINE} />
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
-            >
-              Daftar Sekarang
-              <ChevronRight className="w-5 h-5 ml-1" />
-            </Button>
+          <div className="flex flex-row gap-3 sm:gap-4">
+            <Link
+            href="https://forms.gle/h8QMy68MRfBip7Qq5"
+            target="_blank"
+            rel="noopener noreferrer">
+            <motion.div
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl glow"
+                >
+                Daftar Sekarang
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
+              </Button>
+            </motion.div>
+            </Link>
             <Button
               size="lg"
               variant="outline"
-              className="border-border bg-background/50 hover:bg-background/80 px-8 h-12 text-base font-medium rounded-full"
+              className="border-border bg-background/50 hover:bg-background/80 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl"
             >
-              Pelajari Lebih Lanjut
+              Pelajari Lebih
             </Button>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

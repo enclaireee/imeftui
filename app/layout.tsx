@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Poppins, Merriweather } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="dark">
-      <body className={`${manrope.variable} font-sans antialiased`}>
+      <body
+        className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
+      >
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

@@ -2,10 +2,10 @@
 
 import { useEffect, useState, useLayoutEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Safe useLayoutEffect that falls back to useEffect on server
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -38,12 +38,16 @@ export function Header() {
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
       <nav className="glass-card rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between backdrop-blur-xl">
-        {/* Logo */}
-        <Link href="#" className="font-bold text-lg text-foreground">
-          IME<span className="text-primary">FTUI</span>
+        <Link href="#" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="IME FTUI"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
         </Link>
 
-        {/* Nav Links - Hidden on mobile */}
         <div className="hidden sm:flex items-center gap-6">
           {navItems.map((item) => (
             <Link
@@ -56,7 +60,6 @@ export function Header() {
           ))}
         </div>
 
-        {/* Actions */}
         <div className="flex items-center gap-2">
           {mounted && (
             <Button
@@ -73,12 +76,18 @@ export function Header() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           )}
-          <Button
-            size="sm"
-            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
+          <Link
+            href="https://forms.gle/h8QMy68MRfBip7Qq5"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Daftar
-          </Button>
+            <Button
+              size="sm"
+              className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
+              >
+              Daftar
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>

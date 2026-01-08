@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Award, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
-import { requirements } from "@/app/data";
+import { requirements } from "../data";
 
 export function RequirementsSection() {
   return (

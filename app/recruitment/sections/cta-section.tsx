@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export function CTASection() {
   return (
@@ -15,7 +16,6 @@ export function CTASection() {
           viewport={{ once: true }}
           className="glass-card rounded-3xl p-12 sm:p-16 relative overflow-hidden"
         >
-          {/* Background glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
 
           <div className="relative z-10">
@@ -26,13 +26,18 @@ export function CTASection() {
               Jangan lewatkan kesempatan untuk menjadi bagian dari IME FTUI
               2026. Daftar sekarang dan mulai perjalananmu!
             </p>
+            <Link
+            href="https://forms.gle/h8QMy68MRfBip7Qq5"
+            target="_blank"
+            rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
-            >
+              >
               Daftar Sekarang
               <ExternalLink className="w-5 h-5 ml-2" />
             </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

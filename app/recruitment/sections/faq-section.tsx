@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion } from "motion/react";
-import { faqs } from "@/app/data";
+import { faqs } from "../data";
 
 export function FAQSection() {
   return (

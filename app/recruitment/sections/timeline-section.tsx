@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
-import { timeline } from "@/app/data";
+import { timeline } from "../data";
 
 export function TimelineSection() {
   return (

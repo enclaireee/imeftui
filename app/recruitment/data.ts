@@ -19,7 +19,7 @@ import {
 export const RECRUITMENT_DEADLINE = new Date("2026-01-21T23:59:59");
 
 export const stats = [
-  { value: "900+", label: "Warga Departemen Teknik Elektro" },
+  { value: "800+", label: "Warga Departemen Teknik Elektro" },
   { value: "60+", label: "Program Kerja" },
   { value: "12", label: "Divisi" },
   { value: "1", label: "Keluarga Penjejak Asa" },
