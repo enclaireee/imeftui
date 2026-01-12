@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const RECRUITMENT_DEADLINE = new Date("2026-01-16T18:59:59");
-export const REGISTRATION_FORM_URL = "https://forms.gle/J77oDLFtwcrEqvmz9";
+export const REGISTRATION_FORM_URL = "https://forms.gle/";
 
 export const stats = [
   { value: "800+", label: "Warga Departemen Teknik Elektro" },
