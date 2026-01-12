@@ -18,13 +18,13 @@ import {
   Building,
 } from "lucide-react";
 
-export const RECRUITMENT_DEADLINE = new Date("2026-01-21T23:59:59");
+export const RECRUITMENT_DEADLINE = new Date("2026-01-16T18:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/J77oDLFtwcrEqvmz9";
 
 export const stats = [
   { value: "800+", label: "Warga Departemen Teknik Elektro" },
   { value: "60+", label: "Program Kerja" },
-  { value: "12", label: "Divisi" },
+  { value: "12", label: "Bidang" },
   { value: "1", label: "Keluarga Penjejak Asa" },
 ];
 
@@ -47,10 +47,10 @@ export const divisi: Divisi[] = [
     abbr: "AKPRO",
     description: "Mengembangkan akademik dan profesi mahasiswa",
     fullDescription:
-      "Divisi yang bertanggung jawab dalam pengembangan akademik dan profesional mahasiswa melalui berbagai kegiatan seperti seminar, workshop, dan bimbingan karir.",
+      "Akademis dan Profesi IME FTUI bertanggungjawab untuk mengadvokasi keperluan akademis dan pasca-kampus mahasiswa Departemen Teknik Elektro.",
     icon: GraduationCap,
-    programs: ["Seminar Karir", "Workshop Technical"],
-    addedValues: ["Skill Profesional", "Networking Industri"],
+    programs: ["Diktat", "Asistensi Matkul"],
+    addedValues: ["Akademis", "Perumusan Materi"],
     color: "from-primary/20 to-primary/40",
   },
   {
@@ -59,10 +59,10 @@ export const divisi: Divisi[] = [
     abbr: "Kastrat",
     description: "Kajian isu strategis dan advokasi",
     fullDescription:
-      "Divisi yang fokus pada kajian isu-isu strategis kemahasiswaan dan melakukan advokasi untuk kepentingan mahasiswa Teknik Elektro.",
+      "Kajian dan Aksi Strategis merupakan bidang di IME FTUI yang bertanggung jawab atas fungsi pengkajian, penanaman, dan pencerdasan serta peningkatan iklim diskusi warga DTE terhadap isu POLEKSOSBUDHANKAMLING dan keelektroan.",
     icon: Megaphone,
-    programs: ["Diskusi Publik", "Kajian Kebijakan"],
-    addedValues: ["Critical Thinking", "Public Speaking"],
+    programs: ["Distro", "Sociotalk"],
+    addedValues: ["Copywriting", "Issue Analysis"],
     color: "from-orange-500/20 to-red-500/20",
   },
   {
@@ -71,10 +71,10 @@ export const divisi: Divisi[] = [
     abbr: "KEMA",
     description: "Koordinasi kegiatan kemahasiswaan",
     fullDescription:
-      "Divisi yang mengkoordinasikan seluruh kegiatan kemahasiswaan dan menjadi penghubung antara mahasiswa dengan pihak fakultas.",
+      "Kemahasiswaan merupakan bidang yang bertanggung jawab dalam mengawal pembinaan baik intra maupun pasca kampus yang dilaksanakan oleh Departemen Teknik Elektro.",
     icon: Users,
-    programs: ["Koordinasi Event", "Networking Session"],
-    addedValues: ["Leadership", "Manajemen Tim"],
+    programs: ["PONSEL", "Sharing Session"],
+    addedValues: ["People Management", "Critical Thinking"],
     color: "from-green-500/20 to-emerald-500/20",
   },
   {
@@ -83,10 +83,10 @@ export const divisi: Divisi[] = [
     abbr: "KESMA",
     description: "Advokasi dan kesejahteraan mahasiswa",
     fullDescription:
-      "Divisi yang bertugas memastikan kesejahteraan mahasiswa terjaga, termasuk advokasi hak-hak mahasiswa dan bantuan sosial.",
+      "Kesejahteraan Mahasiswa IME FTUI adalah bidang yang berfungsi untuk mengadvokasi kesehatan mental, kebutuhan fasilitas, dan finansial mahasiswa Departemen Teknik Elektro.",
     icon: Shield,
-    programs: ["Advokasi Mahasiswa", "Bantuan Sosial"],
-    addedValues: ["Empati Sosial", "Problem Solving"],
+    programs: ["KENTAL", "Electrical Engineering Foundation"],
+    addedValues: ["Mental health Awareness", "Administrasi"],
     color: "from-teal-500/20 to-cyan-500/20",
   },
   {
@@ -95,10 +95,10 @@ export const divisi: Divisi[] = [
     abbr: "KESTARI",
     description: "Administrasi dan dokumentasi",
     fullDescription:
-      "Divisi yang mengelola administrasi organisasi, dokumentasi kegiatan, dan arsip penting IME FTUI.",
+      "Bidang kesekretariatan IME FTUI bertanggung jawab untuk mengawasi alur administrasi internal dan eksternal lembaga IME FTUI.",
     icon: FileText,
-    programs: ["Manajemen Arsip", "Dokumentasi Event"],
-    addedValues: ["Detail Oriented", "Organisasi"],
+    programs: ["Internal Games", "Birthday Blast"],
+    addedValues: ["Copywriting", "Administrasi"],
     color: "from-slate-500/20 to-gray-500/20",
   },
   {
@@ -107,10 +107,10 @@ export const divisi: Divisi[] = [
     abbr: "KOMINFO",
     description: "Media sosial dan publikasi",
     fullDescription:
-      "Divisi yang mengelola komunikasi internal dan eksternal, media sosial, serta publikasi seluruh kegiatan IME FTUI.",
+      "Bidang Komunikasi dan Informasi IME FTUI 2026 bertanggung jawab mengelola informasi internal dan eksternal, menjaga citra IME FTUI, serta menjalin hubungan baik dengan seluruh stakeholder.",
     icon: Network,
-    programs: ["Social Media", "Desain Grafis"],
-    addedValues: ["Kreativitas", "Digital Marketing"],
+    programs: ["PSB IME FTUI", "Website"],
+    addedValues: ["Graphic Design", "Relasi dengan Alumni"],
     color: "from-violet-500/20 to-purple-500/20",
   },
   {
@@ -119,10 +119,10 @@ export const divisi: Divisi[] = [
     abbr: "LITBANG",
     description: "Riset dan inovasi teknologi",
     fullDescription:
-      "Divisi yang fokus pada penelitian, pengembangan teknologi, dan inovasi untuk mendukung kemajuan mahasiswa Teknik Elektro.",
+      "Penelitian dan Pengembangan merupakan bidang yang berfungsi sebagai evaluator, analisator, dan konsultan bagi seluruh bidang di IME FTUI. ",
     icon: Rocket,
-    programs: ["Research Project", "Hackathon"],
-    addedValues: ["Analytical Thinking", "Inovasi"],
+    programs: ["BLUEPRINT", "Human Resource Evaluation"],
+    addedValues: ["Consulting", "Structured Problem Solving"],
     color: "from-rose-500/20 to-pink-500/20",
   },
   {
@@ -131,21 +131,21 @@ export const divisi: Divisi[] = [
     abbr: "PENGMAS",
     description: "Kegiatan sosial dan pengabdian",
     fullDescription:
-      "Divisi yang menyelenggarakan kegiatan pengabdian kepada masyarakat sebagai bentuk kontribusi mahasiswa Teknik Elektro.",
+      "Bidang Pengabdian Masyarakan bertanggung jawab dalam mengimplementasikan salah satu tridharma perguruan tinggi yang berkaitan dengan pengabdian masyarakat.",
     icon: HandHeart,
-    programs: ["Bakti Sosial", "Mengajar Desa"],
-    addedValues: ["Kepedulian Sosial", "Teamwork"],
+    programs: ["Elektro Charity", "Sociotalk"],
+    addedValues: ["Social Awareness", ""],
     color: "from-secondary/20 to-secondary/10",
   },
   {
     id: 9,
-    name: "Pengembangan IPTEK",
+    name: "Pengembangan Ilmu Pengetahuan dan Teknologi",
     abbr: "PIPTEK",
     description: "Pengembangan ilmu dan teknologi",
     fullDescription:
-      "Divisi yang bertanggung jawab dalam pengembangan ilmu pengetahuan dan teknologi melalui berbagai kompetisi dan proyek.",
+      "Bidang Pengabdian Masyarakan bertanggung jawab dalam mengimplementasikan salah satu tridharma perguruan tinggi yang berkaitan dengan pengabdian masyarakat.",
     icon: Cpu,
-    programs: ["Lomba Teknologi", "Workshop Coding"],
+    programs: ["Elektro Charity", "Sociotalk"],
     addedValues: ["Technical Skills", "Problem Solving"],
     color: "from-primary/20 to-primary/40",
   },
@@ -155,7 +155,7 @@ export const divisi: Divisi[] = [
     abbr: "RETRO",
     description: "Kegiatan keagamaan dan spiritual",
     fullDescription:
-      "Divisi yang menyelenggarakan kegiatan keagamaan dan pembinaan spiritual bagi seluruh mahasiswa Teknik Elektro.",
+      "Bidang yang menyelenggarakan kegiatan keagamaan dan pembinaan spiritual bagi seluruh mahasiswa Teknik Elektro.",
     icon: Heart,
     programs: ["Kajian Rutin", "Ramadan Program"],
     addedValues: ["Spiritual Growth", "Komunitas"],
@@ -167,10 +167,10 @@ export const divisi: Divisi[] = [
     abbr: "SIWA",
     description: "Seni, budaya, dan kreativitas",
     fullDescription:
-      "Divisi yang mewadahi kreativitas mahasiswa dalam bidang seni, budaya, dan berbagai kegiatan ekstrakurikuler.",
+      "Bidang Kreasi Mahasiswa menjaring, mewadahi, dan mengapresiasi minat dan bakat warga Departemen Teknik Elektro dalam bidang seni, dan Olahraga. Serta mencriptakan suasana bersenang-senang di DTE.",
     icon: Music,
-    programs: ["Festival Seni", "Band Competition"],
-    addedValues: ["Ekspresi Kreatif", "Bakat Seni"],
+    programs: ["Gladiator", "Electrical Engineering Cup"],
+    addedValues: ["Project Management", "Talent Management"],
     color: "from-fuchsia-500/20 to-pink-500/20",
   },
   {
@@ -179,10 +179,10 @@ export const divisi: Divisi[] = [
     abbr: "KEWIRUS",
     description: "Keuangan dan entrepreneurship",
     fullDescription:
-      "Divisi yang mengelola keuangan organisasi dan mengembangkan jiwa kewirausahaan mahasiswa melalui berbagai program bisnis.",
+      "Keuangan dan Kewirausahaan bertanggung jawab atas keuangan dan kewirausahaan IME FTUI. KEWIRUS bertanggung jawab atas seluruh pemasukan dan pengeluaran IME FTUI, serta pencarian pemasukan keuangan untuk dana lembaga IME FTUI. KEWIRUS juga bertanggungjawab untuk mengembangkan skill dan semangat kewirausahaan kepada mahasiswa di DTE.",
     icon: Wallet,
-    programs: ["Business Workshop", "Bazaar"],
-    addedValues: ["Financial Literacy", "Entrepreneurship"],
+    programs: ["Audit Keuangan", "ELEMENT"],
+    addedValues: ["Financial Management", "Entrepreneurship"],
     color: "from-lime-500/20 to-green-500/20",
   },
 ];
@@ -197,7 +197,7 @@ export const timeline = [
   {
     date: "14 Januari 2026",
     event: "Info Session",
-    description: "Pengenalan IME dan divisi",
+    description: "Pengenalan IME dan bidang",
     status: "upcoming",
   },
   {
@@ -209,7 +209,7 @@ export const timeline = [
   {
     date: "25 Januari 2026",
     event: "Seleksi Wawancara",
-    description: "Interview dengan divisi pilihan",
+    description: "Interview dengan bidang pilihan",
     status: "upcoming",
   },
   {
@@ -232,22 +232,22 @@ export const faqs = [
   {
     question: "Apa itu IME FTUI?",
     answer:
-      "IME (Ikatan Mahasiswa Elektro) FTUI adalah organisasi kemahasiswaan yang mewadahi seluruh mahasiswa Teknik Elektro Universitas Indonesia.",
+      "Ikatan Mahasiswa Elektro Fakultas Teknik Universitas Indonesia (IME FTUI) merupakan organisasi yang bergerak dalam bidang kemahasiswaan yang bertujuan untuk mewadahi dan melayani mahasiswa Departemen Teknik Elektro Fakultas Teknik Universitas Indonesia.",
   },
   {
     question: "Siapa yang bisa mendaftar?",
     answer:
-      "Seluruh mahasiswa aktif Departemen Teknik Elektro FTUI dari semua angkatan dapat mendaftar.",
+      "Mahasiswa Departemen Teknik Elektro Angkatan 2025",
   },
   {
-    question: "Berapa divisi yang bisa dipilih?",
+    question: "Berapa bidang yang bisa dipilih?",
     answer:
-      "Kamu dapat memilih maksimal 2 divisi sebagai pilihan pertama dan kedua.",
+      "Kamu dapat memilih maksimal 2 bidang sebagai pilihan pertama dan kedua.",
   },
   {
-    question: "Bagaimana proses seleksinya?",
+    question: "Apakah perlu pengalaman organisasi sebelumnya untuk mendaftar?",
     answer:
-      "Proses seleksi meliputi screening berkas, wawancara, dan penilaian kecocokan dengan divisi.",
+      "Kamu tidak memerlukan pengalaman organisasi sebelumnya untuk mendaftar. Yang terpenting adalah kamu berkomitmen dan ingin belajar.",
   },
 ];
 

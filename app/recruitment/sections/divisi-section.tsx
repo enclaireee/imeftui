@@ -28,13 +28,13 @@ export function DivisiSection() {
             variant="outline"
             className="mb-4 px-4 py-2 text-sm border-primary/30 bg-primary/5"
           >
-            12 Divisi
+            12 Bidang
           </Badge>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Temukan Tempatmu
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Pilih divisi yang sesuai dengan minat dan bakatmu
+            Pilih bidang yang sesuai dengan minat dan bakatmu
           </p>
         </motion.div>
 
@@ -178,7 +178,7 @@ export function DivisiSection() {
                       transition={{ delay: 0.1, duration: 0.3 }}
                     >
                       <h4 className="text-sm font-semibold text-foreground mb-2">
-                        Tentang Divisi
+                        Tentang Bidang
                       </h4>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {selectedDivisi.fullDescription}

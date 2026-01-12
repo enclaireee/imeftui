@@ -56,7 +56,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Content Layer - Scrolls normally, positioned over the background */}
       <section className="relative z-10 -mt-[100vh] min-h-screen flex flex-col items-center justify-center px-6 py-24">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -66,7 +65,7 @@ export function HeroSection() {
           >
             <Badge
               variant="outline"
-              className="mb-6 px-4 py-2 text-sm border-primary/30 bg-primary/5 backdrop-blur-sm"
+              className="hidden md:inline-flex mb-6 px-4 py-2 text-sm border-primary/30 bg-primary/5 backdrop-blur-sm"
             >
               <Sparkles className="w-4 h-4 mr-2 text-primary" />
               Open Recruitment IME FTUI 2026

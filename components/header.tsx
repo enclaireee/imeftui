@@ -30,7 +30,7 @@ export function Header() {
   };
 
   const navItems = [
-    { label: "Divisi", href: "#divisi" },
+    { label: "Bidang", href: "#divisi" },
     { label: "Timeline", href: "#timeline" },
     { label: "FAQ", href: "#faq" },
   ];
