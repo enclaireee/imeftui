@@ -1,9 +1,7 @@
 import {
   Users,
-  Briefcase,
   GraduationCap,
   Network,
-  Trophy,
   Megaphone,
   Shield,
   FileText,
@@ -14,10 +12,14 @@ import {
   Wallet,
   Heart,
   LucideIcon,
+  Link,
+  Handshake,
+  ClipboardList,
+  Building,
 } from "lucide-react";
 
 export const RECRUITMENT_DEADLINE = new Date("2026-01-21T23:59:59");
-export const REGISTRATION_FORM_URL = "https://forms.google.com/your-form-link";
+export const REGISTRATION_FORM_URL = "https://forms.gle/J77oDLFtwcrEqvmz9";
 
 export const stats = [
   { value: "800+", label: "Warga Departemen Teknik Elektro" },
@@ -251,24 +253,26 @@ export const faqs = [
 
 export const benefits = [
   {
-    icon: Network,
+    icon: Link,
     title: "Networking",
-    description: "Koneksi dengan 500+ mahasiswa dan alumni",
+    description: "Koneksi dengan mahasiswa dan alumni",
   },
   {
-    icon: GraduationCap,
-    title: "Pengembangan Diri",
-    description: "Workshop, seminar, dan pelatihan rutin",
+    icon: Handshake,
+    title: "Pengembangan Soft Skill",
+    description: "Bekerja sama secara langsung untuk mengembangkan soft skill",
   },
   {
-    icon: Briefcase,
-    title: "Pengalaman Kerja",
-    description: "Kelola proyek dan event nyata",
+    icon: ClipboardList,
+    title: "Project Management",
+    description:
+      "Pengalaman langsung mengelola dan mengeksekusi proyek dari awal hingga selesai",
   },
   {
-    icon: Trophy,
-    title: "Kompetisi",
-    description: "Ikuti lomba tingkat nasional",
+    icon: Building,
+    title: "Berkontribusi di Departemen",
+    description:
+      "Memberikan dampak positif untuk Departemen Teknik Elektro FTUI",
   },
 ];
 
@@ -279,25 +283,4 @@ export const gallery = [
   { id: 4, title: "Bakti Sosial", category: "Sosial" },
   { id: 5, title: "Gathering Anggota", category: "Internal" },
   { id: 6, title: "Seminar Nasional", category: "Seminar" },
-];
-
-export const testimonials = [
-  {
-    name: "Ahmad Rizki",
-    role: "Ketua Departemen Ristek 2025",
-    quote:
-      "IME membentuk saya menjadi pribadi yang lebih bertanggung jawab dan siap menghadapi dunia kerja.",
-  },
-  {
-    name: "Siti Nurhaliza",
-    role: "Staff Humas 2024",
-    quote:
-      "Pengalaman yang tidak akan saya dapatkan di tempat lain. Networking dan skill yang saya dapat sangat berharga.",
-  },
-  {
-    name: "Budi Santoso",
-    role: "Bendahara 2025",
-    quote:
-      "Belajar manajemen keuangan secara langsung dengan tanggung jawab nyata. Sangat worth it!",
-  },
 ];

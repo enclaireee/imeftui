@@ -11,27 +11,47 @@ import { RECRUITMENT_DEADLINE, REGISTRATION_FORM_URL } from "../data";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-primary/20 rounded-full blur-[120px]" />
-      <div className="absolute top-1/3 left-1/3 w-100 h-100 bg-secondary/30 rounded-full blur-[100px]" />
-
-      {/* Decorative Senior Logo - Left Side (hidden on mobile/tablet) */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="hidden lg:block absolute -left-[450px] top-1/2 -translate-y-1/2 w-[1000px] h-[130vh] pointer-events-none"
-      >
+    <section className="sticky top-0 z-0 min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
+      <div className="absolute inset-0 hidden md:block dark:hidden">
         <Image
-          src="/seniortrsp.png"
+          src="/desktopLight.webp"
           alt=""
           fill
-          sizes="1000px"
-          className="object-contain"
+          sizes="100vw"
+          className="object-cover pointer-events-none"
           priority
         />
-      </motion.div>
+      </div>
+      <div className="absolute inset-0 hidden dark:md:block">
+        <Image
+          src="/desktopDark.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 md:hidden dark:hidden">
+        <Image
+          src="/mobilelight.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 hidden dark:block dark:md:hidden">
+        <Image
+          src="/mobiledark.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
@@ -52,10 +72,13 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+          className="text-4xl sm:text-6xl lg:text-5xl font-bold tracking-tight mb-6"
         >
-          <span className="gradient-text">
-            {"Bergabunglah dengan".split("").map((char, index) => (
+          <span
+            className="text-primary dark:text-secondary"
+            style={{ fontFamily: "'Merriweather', serif" }}
+          >
+            {"Langkah Pertama, Menjejak Asa".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
@@ -69,31 +92,15 @@ export function HeroSection() {
               </motion.span>
             ))}
           </span>
-          <br />
-          <span className="text-foreground">
-            {"IME FTUI".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.05,
-                  delay: 1.1 + index * 0.06,
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.8 }}
-          className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+          className="text-lg sm:text-xl text-foreground max-w-2xl mx-auto mb-10"
         >
-          {"Jadilah bagian dari keluarga besar Ikatan Mahasiswa Elektro. Kembangkan potensimu, bangun koneksi, dan ciptakan dampak nyata."
+          {"Menjaga visi, melanjutkan langkah. Mari wujudkan sinergi yang Selaras, strategi Efektif, dan pribadi yang Berdaya."
             .split("")
             .map((char, index) => (
               <motion.span

@@ -18,7 +18,7 @@ export function BenefitsSection() {
             Kenapa Bergabung?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Lebih dari sekadar organisasi
+            Hal yang kalian dapatkan di IME FTUI
           </p>
         </motion.div>
 

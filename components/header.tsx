@@ -40,10 +40,10 @@ export function Header() {
       <nav className="glass-card rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between backdrop-blur-xl">
         <Link href="#" className="flex items-center">
           <Image
-            src="/logo.png"
+            src={isDark ? "/logoNama.webp" : "/logoNamaLight.webp"}
             alt="IME FTUI"
-            width={40}
-            height={40}
+            width={100}
+            height={50}
             className="object-contain"
           />
         </Link>
@@ -84,7 +84,7 @@ export function Header() {
             <Button
               size="sm"
               className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
-              >
+            >
               Daftar
             </Button>
           </Link>

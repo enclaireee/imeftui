@@ -1,15 +1,78 @@
 "use client";
 
+import { useEffect, useState, useLayoutEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function Home() {
+  const [isDark, setIsDark] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useIsomorphicLayoutEffect(() => {
+    setMounted(true);
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleTheme = () => {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    if (newIsDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-background bg-noise flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-primary/20 rounded-full blur-[120px]" />
-      <div className="absolute top-1/3 left-1/3 w-100 h-100 bg-secondary/30 rounded-full blur-[100px]" />
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+      {/* Background Images */}
+      <div className="absolute inset-0 hidden md:block dark:hidden">
+        <Image
+          src="/desktopLight.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 hidden dark:md:block">
+        <Image
+          src="/desktopDark.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 md:hidden dark:hidden">
+        <Image
+          src="/mobilelight.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 hidden dark:block dark:md:hidden">
+        <Image
+          src="/mobiledark.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover pointer-events-none"
+          priority
+        />
+      </div>
 
       <div className="relative z-10 text-center max-w-2xl mx-auto">
         {/* Logo */}
@@ -55,22 +118,22 @@ export default function Home() {
         </motion.div>
 
         {/* Description */}
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-muted-foreground text-lg mb-8"
+          className="text-foreground text-lg mb-8"
         >
           Website sedang dalam pengembangan. Kunjungi halaman Open Recruitment
           untuk informasi pendaftaran.
         </motion.p>
 
-        {/* CTA Button */}
+        {/* CTA Button and Theme Toggle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
+          className="flex items-center justify-center gap-3"
         >
           <Link
             href="/recruitment"
@@ -91,6 +154,21 @@ export default function Home() {
               />
             </svg>
           </Link>
+          {mounted && (
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full w-12 h-12 bg-background/50 backdrop-blur-sm border-border hover:bg-background/80"
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          )}
         </motion.div>
       </div>
 

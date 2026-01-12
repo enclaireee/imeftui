@@ -17,18 +17,17 @@ export default function RecruitmentPage() {
     <main className="min-h-screen bg-background bg-noise">
       <Header />
       <HeroSection />
-      <StatsSection />
-      <BenefitsSection />
-      <DivisiSection />
-      <GallerySection />
-      <TimelineSection />
-      <RequirementsSection />
-      <FAQSection />
-      <CTASection />
-      <Footer />
+      <div className="bg-gradient-content">
+        <StatsSection />
+        <BenefitsSection />
+        <DivisiSection />
+        <GallerySection />
+        <TimelineSection />
+        <RequirementsSection />
+        <FAQSection />
+        <CTASection />
+        <Footer />
+      </div>
     </main>
   );
 }
-
-
-
