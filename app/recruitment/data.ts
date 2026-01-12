@@ -189,39 +189,39 @@ export const divisi: Divisi[] = [
 
 export const timeline = [
   {
-    date: "7 Januari 2026",
-    event: "Pendaftaran Dibuka",
-    description: "Formulir pendaftaran online tersedia",
+    date: "16 Januari 2026",
+    event: "Open House",
+    description: "Presentasi dan tanya-tanya setiap bidang IME FTUI melalui zoom meeting",
     status: "active",
   },
   {
-    date: "14 Januari 2026",
-    event: "Info Session",
-    description: "Pengenalan IME dan bidang",
-    status: "upcoming",
-  },
-  {
-    date: "21 Januari 2026",
-    event: "Pendaftaran Ditutup",
-    description: "Batas akhir pengumpulan formulir",
+    date: "18 Januari 2026",
+    event: "Open Recruitment",
+    description: "Pendaftaran BP IME FTUI 2026 resmi dibuka",
     status: "upcoming",
   },
   {
     date: "25 Januari 2026",
-    event: "Seleksi Wawancara",
-    description: "Interview dengan bidang pilihan",
+    event: "Last Day of Registration",
+    description: "Batas akhir pendaftaran BP IME FTUI 2026",
     status: "upcoming",
   },
   {
-    date: "1 Februari 2026",
-    event: "Pengumuman",
-    description: "Hasil seleksi diumumkan",
+    date: "26 Januari 2026",
+    event: "Seleksi Wawancara",
+    description: "Interview pendaftar dengan bidang pilihan",
+    status: "upcoming",
+  },
+  {
+    date: "7 Februari 2026",
+    event: "Forum Group Discussion Calon BP IME FTUI",
+    description: "Forum Group Discussion Calon BP diadakan secara offline",
     status: "upcoming",
   },
 ];
 
 export const requirements = [
-  "Mahasiswa aktif Teknik Elektro FTUI",
+  "Mahasiswa aktif Departemen Teknik Elektro FTUI angkatan 2025",
   "Berkomitmen dan bertanggung jawab",
   "Memiliki semangat belajar tinggi",
   "Mampu bekerja dalam tim",
