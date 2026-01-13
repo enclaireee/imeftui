@@ -20,19 +20,19 @@ export default function RecruitmentPage() {
       <Header />
       <HeroSection />
       <div className="bg-gradient-content bg-noise relative overflow-hidden">
-        {/* Background Blobs for Glass Effect */}
+        {/* Background Blobs for Glass Effect - Reduced blur for performance */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] opacity-50 dark:opacity-20" />
-          <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-secondary/30 rounded-full blur-[100px] opacity-40 dark:opacity-20" />
-          <div className="absolute bottom-[20%] left-[10%] w-[700px] h-[700px] bg-primary/30 rounded-full blur-[140px] opacity-40 dark:opacity-20" />
+          <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] bg-primary/30 rounded-full blur-[80px] opacity-50 dark:opacity-20" />
+          <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-secondary/30 rounded-full blur-[80px] opacity-40 dark:opacity-20" />
+          <div className="absolute bottom-[20%] left-[10%] w-[700px] h-[700px] bg-primary/30 rounded-full blur-[100px] opacity-40 dark:opacity-20" />
 
-          {/* Decorative Elements */}
           <div className="absolute top-20 -left-10 md:left-0 opacity-60">
             <Image
               src="/element1.webp"
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-48 md:w-80 object-contain rotate-12"
             />
           </div>
@@ -42,6 +42,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-40 md:w-72 object-contain -rotate-12"
             />
           </div>
@@ -51,6 +52,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-40 md:w-72 object-contain -rotate-12"
             />
           </div>
@@ -60,6 +62,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-56 md:w-96 object-contain rotate-6"
             />
           </div>
@@ -69,6 +72,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-56 md:w-96 object-contain rotate-6"
             />
           </div>
@@ -78,6 +82,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-48 md:w-80 object-contain -rotate-6"
             />
           </div>
@@ -87,6 +92,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-44 md:w-72 object-contain -rotate-6"
             />
           </div>
@@ -96,6 +102,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-44 md:w-72 object-contain rotate-12"
             />
           </div>
@@ -105,6 +112,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-36 md:w-64 object-contain rotate-12"
             />
           </div>
@@ -114,6 +122,7 @@ export default function RecruitmentPage() {
               alt=""
               width={300}
               height={300}
+              loading="lazy"
               className="w-36 md:w-64 object-contain -rotate-12"
             />
           </div>

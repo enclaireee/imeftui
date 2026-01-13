@@ -14,7 +14,7 @@ import {
   REGISTRATION_FORM_URL,
 } from "../data";
 
-// Memoized card component with logo support
+// Memoized card component - simplified without layoutId for better performance
 const DivisiCard = memo(function DivisiCard({
   div,
   index,
@@ -26,7 +26,6 @@ const DivisiCard = memo(function DivisiCard({
 }) {
   return (
     <motion.div
-      layoutId={`card-${div.id}`}
       onClick={onClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -34,12 +33,7 @@ const DivisiCard = memo(function DivisiCard({
       viewport={{ once: true, margin: "-50px" }}
       className="glass-card glass-card-hover rounded-xl p-3 sm:p-4 cursor-pointer group relative z-10"
     >
-      <motion.div
-        layoutId={`icon-container-${div.id}`}
-        layout="position"
-        className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center mb-2 sm:mb-3 transition-colors overflow-hidden"
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
+      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center mb-2 sm:mb-3 overflow-hidden">
         {/* Dark mode logo */}
         <Image
           src={div.logoDark}
@@ -56,23 +50,13 @@ const DivisiCard = memo(function DivisiCard({
           height={56}
           className="block dark:hidden object-contain w-full h-full"
         />
-      </motion.div>
-      <motion.h3
-        layoutId={`abbr-${div.id}`}
-        layout="position"
-        className="font-semibold text-foreground text-xs sm:text-sm mb-0.5 sm:mb-1"
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
+      </div>
+      <h3 className="font-semibold text-foreground text-xs sm:text-sm mb-0.5 sm:mb-1">
         {div.abbr}
-      </motion.h3>
-      <motion.p
-        layoutId={`name-${div.id}`}
-        layout="position"
-        className="text-[10px] sm:text-xs text-muted-foreground line-clamp-2"
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
+      </h3>
+      <p className="text-[10px] sm:text-xs text-muted-foreground line-clamp-2">
         {div.name}
-      </motion.p>
+      </p>
     </motion.div>
   );
 });
@@ -120,7 +104,7 @@ export const DivisiSection = memo(function DivisiSection() {
         </div>
       </div>
 
-      {/* Shared Element Transition Modal */}
+      {/* Optimized Modal - Simple fade + scale instead of complex layoutId */}
       <AnimatePresence>
         {selectedDivisi && (
           <>
@@ -134,45 +118,31 @@ export const DivisiSection = memo(function DivisiSection() {
               onClick={handleClose}
             />
 
-            {/* Modal Container - Using Flex centering instead of Transforms */}
+            {/* Modal Container */}
             <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none p-4 sm:p-6">
               <motion.div
-                layoutId={`card-${selectedDivisi.id}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className="w-full max-w-[calc(100%-2rem)] sm:max-w-lg max-h-[90vh] bg-background rounded-2xl border shadow-2xl overflow-hidden pointer-events-auto flex flex-col relative"
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30,
-                }}
               >
                 <VisuallyHidden>
                   <h2>{selectedDivisi.name}</h2>
                 </VisuallyHidden>
 
                 {/* Close Button */}
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+                <button
                   onClick={handleClose}
                   className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center hover:bg-background transition-colors shadow-lg"
                 >
                   <X className="w-4 h-4 text-foreground" />
-                </motion.button>
+                </button>
 
                 <div className="overflow-y-auto flex-1 p-6">
                   {/* Header with Logo and Title */}
                   <div className="flex items-start gap-4 mb-6">
-                    <motion.div
-                      layoutId={`icon-container-${selectedDivisi.id}`}
-                      layout="position"
-                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-foreground/5 flex items-center justify-center overflow-hidden shrink-0"
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                    >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-foreground/5 flex items-center justify-center overflow-hidden shrink-0">
                       <Image
                         src={selectedDivisi.logoDark}
                         alt={selectedDivisi.abbr}
@@ -187,32 +157,14 @@ export const DivisiSection = memo(function DivisiSection() {
                         height={80}
                         className="block dark:hidden object-contain w-full h-full p-2"
                       />
-                    </motion.div>
+                    </div>
                     <div className="flex-1 min-w-0 pt-1">
-                      <motion.h3
-                        layoutId={`abbr-${selectedDivisi.id}`}
-                        layout="position"
-                        className="font-bold text-xl sm:text-2xl text-foreground"
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 30,
-                        }}
-                      >
+                      <h3 className="font-bold text-xl sm:text-2xl text-foreground">
                         {selectedDivisi.abbr}
-                      </motion.h3>
-                      <motion.p
-                        layoutId={`name-${selectedDivisi.id}`}
-                        layout="position"
-                        className="text-sm text-muted-foreground mt-0.5"
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 30,
-                        }}
-                      >
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-0.5">
                         {selectedDivisi.name}
-                      </motion.p>
+                      </p>
                     </div>
                   </div>
 
@@ -220,29 +172,18 @@ export const DivisiSection = memo(function DivisiSection() {
                   <div className="h-px bg-border mb-5" />
 
                   {/* Description */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                    className="mb-5"
-                  >
+                  <div className="mb-5">
                     <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
                       Tentang Bidang
                     </h4>
                     <p className="text-foreground/90 text-sm leading-relaxed">
                       {selectedDivisi.fullDescription}
                     </p>
-                  </motion.div>
+                  </div>
 
                   {/* Programs and Added Values */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ delay: 0.15, duration: 0.3 }}
-                    >
+                    <div>
                       <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
                         Program Kerja
                       </h4>
@@ -257,13 +198,8 @@ export const DivisiSection = memo(function DivisiSection() {
                           </div>
                         ))}
                       </div>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ delay: 0.2, duration: 0.3 }}
-                    >
+                    </div>
+                    <div>
                       <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
                         Added Value
                       </h4>
@@ -278,17 +214,11 @@ export const DivisiSection = memo(function DivisiSection() {
                           </div>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Registration CTA */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ delay: 0.25, duration: 0.3 }}
-                    className="space-y-3"
-                  >
+                  <div className="space-y-3">
                     {REGISTRATION_OPEN ? (
                       <Button
                         className="w-full rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
@@ -318,7 +248,7 @@ export const DivisiSection = memo(function DivisiSection() {
                     >
                       Tutup
                     </Button>
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </div>

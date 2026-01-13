@@ -11,6 +11,7 @@ const WIPPage = memo(function WIPPage() {
 
   useEffect(() => {
     // Sync state with current document class (set by layout script)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDark(document.documentElement.classList.contains("dark"));
   }, []);
 

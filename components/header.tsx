@@ -52,13 +52,22 @@ export const Header = memo(function Header() {
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
       <nav className="glass-card rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between backdrop-blur-xl">
         <Link href="#" className="flex items-center">
-          <Image
-            src={isDark ? "/logoNama.webp" : "/logoNamaLight.webp"}
-            alt="IME FTUI"
-            width={100}
-            height={50}
-            className="object-contain"
-          />
+          <div className="relative w-[100px] h-[50px]">
+            <Image
+              src="/logoNama.webp"
+              alt="IME FTUI"
+              fill
+              className="object-contain hidden dark:block"
+              sizes="100px"
+            />
+            <Image
+              src="/logoNamaLight.webp"
+              alt="IME FTUI"
+              fill
+              className="object-contain block dark:hidden"
+              sizes="100px"
+            />
+          </div>
         </Link>
 
         <div className="hidden sm:flex items-center gap-6">
