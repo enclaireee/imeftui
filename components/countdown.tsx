@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, memo, useMemo } from "react";
 
 interface TimeLeft {
   days: number;
@@ -12,7 +13,52 @@ interface CountdownProps {
   targetDate: Date;
 }
 
-export function Countdown({ targetDate }: CountdownProps) {
+// Memoized time unit card
+const TimeUnit = memo(function TimeUnit({
+  value,
+  label,
+  showSeparator,
+}: {
+  value: number;
+  label: string;
+  showSeparator: boolean;
+}) {
+  return (
+    <div className="glass-card glass-card-hover rounded-2xl p-4 sm:p-6 min-w-[70px] sm:min-w-[90px] text-center relative">
+      <div className="text-2xl sm:text-4xl font-bold text-foreground tabular-nums">
+        {String(value).padStart(2, "0")}
+      </div>
+      <div className="text-xs sm:text-sm text-muted-foreground mt-1 uppercase tracking-wider">
+        {label}
+      </div>
+      {showSeparator && (
+        <span className="absolute -right-2 top-1/2 -translate-y-1/2 text-foreground/30 text-2xl hidden sm:block">
+          :
+        </span>
+      )}
+    </div>
+  );
+});
+
+// Loading skeleton
+const LoadingSkeleton = memo(function LoadingSkeleton() {
+  return (
+    <div className="flex gap-3 sm:gap-4">
+      {[...Array(4)].map((_, i) => (
+        <div
+          key={i}
+          className="glass-card rounded-2xl p-4 sm:p-6 min-w-[70px] sm:min-w-[90px]"
+        >
+          <div className="h-8 sm:h-10 bg-white/5 rounded animate-pulse" />
+        </div>
+      ))}
+    </div>
+  );
+});
+
+export const Countdown = memo(function Countdown({
+  targetDate,
+}: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -21,12 +67,15 @@ export function Countdown({ targetDate }: CountdownProps) {
   });
   const [mounted, setMounted] = useState(false);
 
+  // Memoize target timestamp to prevent recalculation
+  const targetTime = useMemo(() => targetDate.getTime(), [targetDate]);
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
 
     const calculateTimeLeft = () => {
-      const difference = targetDate.getTime() - new Date().getTime();
+      const difference = targetTime - Date.now();
 
       if (difference > 0) {
         setTimeLeft({
@@ -44,21 +93,10 @@ export function Countdown({ targetDate }: CountdownProps) {
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [targetTime]);
 
   if (!mounted) {
-    return (
-      <div className="flex gap-3 sm:gap-4">
-        {[...Array(4)].map((_, i) => (
-          <div
-            key={i}
-            className="glass-card rounded-2xl p-4 sm:p-6 min-w-[70px] sm:min-w-[90px]"
-          >
-            <div className="h-8 sm:h-10 bg-white/5 rounded animate-pulse" />
-          </div>
-        ))}
-      </div>
-    );
+    return <LoadingSkeleton />;
   }
 
   const timeUnits = [
@@ -71,23 +109,13 @@ export function Countdown({ targetDate }: CountdownProps) {
   return (
     <div className="flex gap-3 sm:gap-4">
       {timeUnits.map((unit, index) => (
-        <div
+        <TimeUnit
           key={unit.label}
-          className="glass-card glass-card-hover rounded-2xl p-4 sm:p-6 min-w-[70px] sm:min-w-[90px] text-center"
-        >
-          <div className="text-2xl sm:text-4xl font-bold text-foreground tabular-nums">
-            {String(unit.value).padStart(2, "0")}
-          </div>
-          <div className="text-xs sm:text-sm text-muted-foreground mt-1 uppercase tracking-wider">
-            {unit.label}
-          </div>
-          {index < timeUnits.length - 1 && (
-            <span className="absolute -right-2 top-1/2 -translate-y-1/2 text-foreground/30 text-2xl hidden sm:block">
-              :
-            </span>
-          )}
-        </div>
+          value={unit.value}
+          label={unit.label}
+          showSeparator={index < timeUnits.length - 1}
+        />
       ))}
     </div>
   );
-}
+});

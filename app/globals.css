@@ -81,7 +81,6 @@
   --sidebar-border: oklch(0.9 0.02 250);
   --sidebar-ring: oklch(0.55 0.2 250);
 
-  /* Gradient transition variables - adjust ratio to control gradient coverage */
   --gradient-ratio: 60%; /* How much of the background is gradient (0-100%) */
   --gradient-end-color: #ffffff; /* Color after gradient ends */
 }
@@ -295,11 +294,26 @@
 }
 
 .animate-marquee {
-  animation: marquee 6s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 6s linear infinite;
+  animation: marquee-reverse 20s linear infinite;
+}
+
+/* Desktop marquee - slower for larger viewport */
+@keyframes marquee-desktop {
+  0% {
+    transform: translateX(0) translateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0);
+  }
+}
+
+.animate-marquee-desktop {
+  animation: marquee-desktop 30s linear infinite;
+  will-change: transform;
 }
 
 @media (hover: hover) {
@@ -321,4 +335,42 @@
 
 .dark .bg-gradient-content {
   background: #001b55;
+}
+
+/* Performance-optimized animations - GPU accelerated */
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    transform: scale(1.03) translateZ(0);
+  }
+}
+
+@keyframes scroll-indicator {
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(12px) translateZ(0);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 1.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Optimized marquee with GPU acceleration */
+.animate-marquee,
+.animate-marquee-reverse {
+  will-change: transform;
+  transform: translateZ(0);
 }

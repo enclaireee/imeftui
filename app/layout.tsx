@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Open Recruitment IME FTUI 2026",
   description:
     "Bergabunglah dengan Ikatan Mahasiswa Elektro FTUI 2026. Daftar sekarang dan jadilah bagian dari keluarga IME!",
-  keywords: ["IME", "FTUI", "Open Recruitment", "2026", "Elektro", "UI"],
+  keywords: ["IME", "FTUI", "Open Recruitment", "2026", "Elektro", "UI", "Ikatan Mahasiswa Elektro", "IME FTUI", "Teknik", "Universitas Indonesia"],
   openGraph: {
     title: "Open Recruitment IME FTUI 2026",
     description: "Bergabunglah dengan Ikatan Mahasiswa Elektro FTUI 2026",

@@ -1,9 +1,0 @@
-export { HeroSection } from "./hero-section";
-export { StatsSection } from "./stats-section";
-export { DivisiSection } from "./divisi-section";
-export { BenefitsSection } from "./benefits-section";
-export { GallerySection } from "./gallery-section";
-export { TimelineSection } from "./timeline-section";
-export { RequirementsSection } from "./requirements-section";
-export { FAQSection } from "./faq-section";
-export { CTASection } from "./cta-section";

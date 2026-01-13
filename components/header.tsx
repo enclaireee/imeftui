@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useLayoutEffect } from "react";
+import { memo, useEffect, useState, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export function Header() {
+export const Header = memo(function Header() {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -92,4 +92,4 @@ export function Header() {
       </nav>
     </header>
   );
-}
+});

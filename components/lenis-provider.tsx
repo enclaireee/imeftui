@@ -17,16 +17,10 @@ export function LenisProvider({ children }: LenisProviderProps) {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
+      autoRaf: true, // Let Lenis manage its own RAF loop efficiently
     });
 
     lenisRef.current = lenis;
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
