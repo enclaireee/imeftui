@@ -3,15 +3,46 @@
 import { memo } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Construction } from "lucide-react";
+import { Construction, Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const WIPPage = memo(function WIPPage() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Sync state with current document class (set by layout script)
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+      setIsDark(true);
+    }
+  };
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-primary/20 rounded-full blur-[120px] opacity-30" />
         <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[120px] opacity-30" />
       </div>
+
+      <button
+        onClick={toggleTheme}
+        className="absolute top-6 right-6 p-3 rounded-full bg-background/50 border border-border backdrop-blur-sm z-50 hover:bg-background/80 transition-all shadow-lg"
+        aria-label="Toggle Theme"
+      >
+        {isDark ? (
+          <Sun className="w-5 h-5 text-yellow-500" />
+        ) : (
+          <Moon className="w-5 h-5 text-blue-500" />
+        )}
+      </button>
 
       <div className="relative z-10 max-w-md mx-auto text-center">
         <motion.div

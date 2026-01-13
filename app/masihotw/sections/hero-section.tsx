@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -88,49 +88,58 @@ const ScrollIndicator = memo(function ScrollIndicator() {
 });
 
 export const HeroSection = memo(function HeroSection() {
+  const common = { alt: "", sizes: "100vw", fill: true, priority: true };
+
+  const {
+    props: { srcSet: desktopLightSrcSet },
+  } = getImageProps({
+    ...common,
+    src: "/desktopLight.webp",
+  });
+  const {
+    props: { srcSet: desktopDarkSrcSet },
+  } = getImageProps({
+    ...common,
+    src: "/desktopDark.webp",
+  });
+  const {
+    props: { src: mobileLightSrc, alt: mobileLightAlt, ...mobileLightProps },
+  } = getImageProps({
+    ...common,
+    src: "/mobilelight.webp",
+  });
+  const {
+    props: { src: mobileDarkSrc, alt: mobileDarkAlt, ...mobileDarkProps },
+  } = getImageProps({
+    ...common,
+    src: "/mobiledark.webp",
+  });
+
   return (
     <>
       {/* Sticky Background Layer - Only this stays fixed */}
       <div className="sticky top-0 z-0 h-screen">
-        <div className="absolute inset-0 hidden md:block dark:hidden">
-          <Image
-            src="/desktopLight.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover pointer-events-none"
-            priority
-          />
+        <div className="absolute inset-0 block dark:hidden">
+          <picture>
+            <source media="(min-width: 768px)" srcSet={desktopLightSrcSet} />
+            <img
+              alt={mobileLightAlt}
+              {...mobileLightProps}
+              src={mobileLightSrc}
+              className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+            />
+          </picture>
         </div>
-        <div className="absolute inset-0 hidden dark:md:block">
-          <Image
-            src="/desktopDark.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover pointer-events-none"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 md:hidden dark:hidden">
-          <Image
-            src="/mobilelight.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover pointer-events-none"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 hidden dark:block dark:md:hidden">
-          <Image
-            src="/mobiledark.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover pointer-events-none"
-            priority
-          />
+        <div className="absolute inset-0 hidden dark:block">
+          <picture>
+            <source media="(min-width: 768px)" srcSet={desktopDarkSrcSet} />
+            <img
+              alt={mobileDarkAlt}
+              {...mobileDarkProps}
+              src={mobileDarkSrc}
+              className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+            />
+          </picture>
         </div>
       </div>
 
@@ -169,7 +178,7 @@ export const HeroSection = memo(function HeroSection() {
           >
             {/* Countdown with Title */}
             <div className="flex flex-col items-center gap-5">
-              <div className="glass-card px-5 py-2 rounded-full flex items-center gap-2">
+              <div className="glass-card px-5 py-2 rounded-2xl flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm sm:text-base font-medium text-foreground">
                   Open House

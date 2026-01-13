@@ -16,13 +16,21 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Open Recruitment IME FTUI 2026",
-  description:
-    "Bergabunglah dengan Ikatan Mahasiswa Elektro FTUI 2026. Daftar sekarang dan jadilah bagian dari keluarga IME!",
-  keywords: ["IME", "FTUI", "Open Recruitment", "2026", "Elektro", "UI", "Ikatan Mahasiswa Elektro", "IME FTUI", "Teknik", "Universitas Indonesia"],
+  title: "IME FTUI 2026",
+  description: "Official website of Ikatan Mahasiswa Elektro FTUI.",
+  keywords: [
+    "IME",
+    "FTUI",
+    "Elektro",
+    "UI",
+    "Ikatan Mahasiswa Elektro",
+    "IME FTUI",
+    "Teknik",
+    "Universitas Indonesia",
+  ],
   openGraph: {
-    title: "Open Recruitment IME FTUI 2026",
-    description: "Bergabunglah dengan Ikatan Mahasiswa Elektro FTUI 2026",
+    title: "IME FTUI 2026",
+    description: "Official website of Ikatan Mahasiswa Elektro FTUI.",
     type: "website",
   },
 };
@@ -33,7 +41,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="dark">
+    <html lang="id">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
       >
@@ -42,4 +65,4 @@ export default function RootLayout({
     </html>
   );
 }
-1
+1;
