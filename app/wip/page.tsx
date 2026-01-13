@@ -66,12 +66,10 @@ const WIPPage = memo(function WIPPage() {
             className="block dark:hidden object-contain"
           />
 
-          {/* Icon */}
           <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
             <Construction className="w-8 h-8 text-primary" />
           </div>
 
-          {/* Text */}
           <div className="space-y-3">
             <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
               Sedang Dalam Pengembangan
@@ -82,7 +80,6 @@ const WIPPage = memo(function WIPPage() {
             </p>
           </div>
 
-          {/* Status indicator */}
           <div className="glass-card px-4 py-2 rounded-full flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
             <span className="text-sm font-medium text-foreground">

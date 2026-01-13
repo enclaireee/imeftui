@@ -2,13 +2,17 @@
 
 import { memo } from "react";
 import { getImageProps } from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Countdown } from "@/components/countdown";
 import { Sparkles, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import { RECRUITMENT_DEADLINE, REGISTRATION_FORM_URL } from "../data";
+import { toast } from "sonner";
+import {
+  RECRUITMENT_DEADLINE,
+  REGISTRATION_FORM_URL,
+  REGISTRATION_OPEN,
+} from "../data";
 
 // Optimized: Word-level animation instead of per-character (120+ -> 4 elements)
 const AnimatedHeadline = memo(function AnimatedHeadline() {
@@ -54,20 +58,23 @@ const AnimatedSubtitle = memo(function AnimatedSubtitle() {
 
 // Optimized: CSS animation for button pulse instead of JS-driven
 const CTAButton = memo(function CTAButton() {
+  const handleClick = () => {
+    if (!REGISTRATION_OPEN) {
+      toast("Coming Soon");
+      return;
+    }
+    window.open(REGISTRATION_FORM_URL, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <Link
-      href={REGISTRATION_FORM_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Button
+      size="lg"
+      className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl glow animate-pulse-gentle"
+      onClick={handleClick}
     >
-      <Button
-        size="lg"
-        className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl glow animate-pulse-gentle"
-      >
-        Daftar Sekarang
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
-      </Button>
-    </Link>
+      Daftar Sekarang
+      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1" />
+    </Button>
   );
 });
 
@@ -189,13 +196,6 @@ export const HeroSection = memo(function HeroSection() {
 
             <div className="flex flex-row gap-3 sm:gap-4">
               <CTAButton />
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border bg-background/50 hover:bg-background/80 px-4 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium rounded-xl"
-              >
-                Pelajari Lebih
-              </Button>
             </div>
           </motion.div>
         </div>

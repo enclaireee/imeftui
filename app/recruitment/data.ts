@@ -1,22 +1,8 @@
-import {
-  Users,
-  GraduationCap,
-  Network,
-  Megaphone,
-  Shield,
-  FileText,
-  Rocket,
-  HandHeart,
-  Cpu,
-  Music,
-  Wallet,
-  Heart,
-  LucideIcon,
-  Link,
-  Handshake,
-  ClipboardList,
-  Building,
-} from "lucide-react";
+import { Link, Handshake, ClipboardList, Building } from "lucide-react";
+
+// Toggle this to control registration status
+// true = buttons redirect to form, false = buttons show "Coming Soon" toast
+export const REGISTRATION_OPEN = false;
 
 export const RECRUITMENT_DEADLINE = new Date("2026-01-16T18:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/h8QMy68MRfBip7Qq5";
@@ -32,14 +18,11 @@ export interface Divisi {
   id: number;
   name: string;
   abbr: string;
-  description: string;
   fullDescription: string;
-  icon: LucideIcon;
   programs: string[];
   addedValues: string[];
-  color: string;
-  logoDark?: string;
-  logoLight?: string;
+  logoDark: string;
+  logoLight: string;
 }
 
 export const divisi: Divisi[] = [
@@ -47,13 +30,10 @@ export const divisi: Divisi[] = [
     id: 1,
     name: "Akademis dan Profesi",
     abbr: "AKPRO",
-    description: "Mengembangkan akademik dan profesi mahasiswa",
     fullDescription:
       "Akademis dan Profesi IME FTUI bertanggungjawab untuk mengadvokasi keperluan akademis dan pasca-kampus mahasiswa Departemen Teknik Elektro.",
-    icon: GraduationCap,
     programs: ["Diktat", "Asistensi Matkul"],
     addedValues: ["Akademis", "Perumusan Materi"],
-    color: "from-primary/20 to-primary/40",
     logoDark: "/akproDark.webp",
     logoLight: "/akproLight.webp",
   },
@@ -61,13 +41,10 @@ export const divisi: Divisi[] = [
     id: 2,
     name: "Kajian dan Aksi Strategis",
     abbr: "Kastrat",
-    description: "Kajian isu strategis dan advokasi",
     fullDescription:
       "Kajian dan Aksi Strategis merupakan bidang di IME FTUI yang bertanggung jawab atas fungsi pengkajian, penanaman, dan pencerdasan serta peningkatan iklim diskusi warga DTE terhadap isu POLEKSOSBUDHANKAMLING dan keelektroan.",
-    icon: Megaphone,
     programs: ["Distro", "Sociotalk"],
     addedValues: ["Copywriting", "Issue Analysis"],
-    color: "from-orange-500/20 to-red-500/20",
     logoDark: "/kastratDark.webp",
     logoLight: "/kastratLight.webp",
   },
@@ -75,25 +52,21 @@ export const divisi: Divisi[] = [
     id: 3,
     name: "Kemahasiswaan",
     abbr: "KEMA",
-    description: "Koordinasi kegiatan kemahasiswaan",
     fullDescription:
       "Kemahasiswaan merupakan bidang yang bertanggung jawab dalam mengawal pembinaan baik intra maupun pasca kampus yang dilaksanakan oleh Departemen Teknik Elektro.",
-    icon: Users,
     programs: ["PONSEL", "Sharing Session"],
     addedValues: ["People Management", "Critical Thinking"],
-    color: "from-green-500/20 to-emerald-500/20",
+    logoDark: "/kemaDark.webp",
+    logoLight: "/kemaLight.webp",
   },
   {
     id: 4,
     name: "Kesejahteraan Mahasiswa",
     abbr: "KESMA",
-    description: "Advokasi dan kesejahteraan mahasiswa",
     fullDescription:
       "Kesejahteraan Mahasiswa IME FTUI adalah bidang yang berfungsi untuk mengadvokasi kesehatan mental, kebutuhan fasilitas, dan finansial mahasiswa Departemen Teknik Elektro.",
-    icon: Shield,
     programs: ["KENTAL", "Electrical Engineering Foundation"],
     addedValues: ["Mental health Awareness", "Administrasi"],
-    color: "from-teal-500/20 to-cyan-500/20",
     logoDark: "/kesmaDark.webp",
     logoLight: "/kesmaLight.webp",
   },
@@ -101,13 +74,10 @@ export const divisi: Divisi[] = [
     id: 5,
     name: "Kesekretariatan",
     abbr: "KESTARI",
-    description: "Administrasi dan dokumentasi",
     fullDescription:
       "Bidang kesekretariatan IME FTUI bertanggung jawab untuk mengawasi alur administrasi internal dan eksternal lembaga IME FTUI.",
-    icon: FileText,
     programs: ["Internal Games", "Birthday Blast"],
     addedValues: ["Copywriting", "Administrasi"],
-    color: "from-slate-500/20 to-gray-500/20",
     logoDark: "/kestariDark.webp",
     logoLight: "/kestariLight.webp",
   },
@@ -115,13 +85,10 @@ export const divisi: Divisi[] = [
     id: 6,
     name: "Komunikasi dan Informasi",
     abbr: "KOMINFO",
-    description: "Media sosial dan publikasi",
     fullDescription:
       "Bidang Komunikasi dan Informasi IME FTUI 2026 bertanggung jawab mengelola informasi internal dan eksternal, menjaga citra IME FTUI, serta menjalin hubungan baik dengan seluruh stakeholder.",
-    icon: Network,
     programs: ["PSB IME FTUI", "Website"],
     addedValues: ["Graphic Design", "Relasi dengan Alumni"],
-    color: "from-violet-500/20 to-purple-500/20",
     logoDark: "/kominDark.webp",
     logoLight: "/kominLight.webp",
   },
@@ -129,25 +96,21 @@ export const divisi: Divisi[] = [
     id: 7,
     name: "Penelitian dan Pengembangan",
     abbr: "LITBANG",
-    description: "Riset dan inovasi teknologi",
     fullDescription:
       "Penelitian dan Pengembangan merupakan bidang yang berfungsi sebagai evaluator, analisator, dan konsultan bagi seluruh bidang di IME FTUI. ",
-    icon: Rocket,
     programs: ["BLUEPRINT", "Human Resource Evaluation"],
     addedValues: ["Consulting", "Structured Problem Solving"],
-    color: "from-rose-500/20 to-pink-500/20",
+    logoDark: "/litbangDark.webp",
+    logoLight: "/litbangLight.webp",
   },
   {
     id: 8,
     name: "Pengabdian Masyarakat",
     abbr: "PENGMAS",
-    description: "Kegiatan sosial dan pengabdian",
     fullDescription:
-      "Bidang Pengabdian Masyarakan bertanggung jawab dalam mengimplementasikan salah satu tridharma perguruan tinggi yang berkaitan dengan pengabdian masyarakat.",
-    icon: HandHeart,
+      "Pengabdian Masyarakat adalah bidang IME FTUI yang bertanggung jawab untuk mewadahi dan menumbuhkan sikap kepedulian mahasiswa DTE terhadap masyarakat dan lingkungan hidup, serta menyalurkan core competence DTE kepada masyarakat.",
     programs: ["Elektro Charity", "Sociotalk"],
-    addedValues: ["Social Awareness", ""],
-    color: "from-secondary/20 to-secondary/10",
+    addedValues: ["Environmental Awareness", "Communication"],
     logoDark: "/pengmasDark.webp",
     logoLight: "/pengmasLight.webp",
   },
@@ -155,13 +118,10 @@ export const divisi: Divisi[] = [
     id: 9,
     name: "Pengembangan Ilmu Pengetahuan dan Teknologi",
     abbr: "PIPTEK",
-    description: "Pengembangan ilmu dan teknologi",
     fullDescription:
-      "Bidang Pengabdian Masyarakan bertanggung jawab dalam mengimplementasikan salah satu tridharma perguruan tinggi yang berkaitan dengan pengabdian masyarakat.",
-    icon: Cpu,
-    programs: ["Elektro Charity", "Sociotalk"],
-    addedValues: ["Technical Skills", "Problem Solving"],
-    color: "from-primary/20 to-primary/40",
+      "Bidang yang berfungsi sebagai fasilitator, katalisator, dan kolaborator dalam pengembangan minat dan bakat di bidang keilmiahan, serta sebagai Apresiator untuk menghargai pencapain warga DTE dalam bidang ilmiah",
+    programs: ["Electrocomp", "Nest UI"],
+    addedValues: ["Project management", "Communication"],
     logoDark: "/piptekDark.webp",
     logoLight: "/piptekLight.webp",
   },
@@ -169,13 +129,10 @@ export const divisi: Divisi[] = [
     id: 10,
     name: "Rohani Elektro",
     abbr: "RETRO",
-    description: "Kegiatan keagamaan dan spiritual",
     fullDescription:
-      "Bidang yang menyelenggarakan kegiatan keagamaan dan pembinaan spiritual bagi seluruh mahasiswa Teknik Elektro.",
-    icon: Heart,
-    programs: ["Kajian Rutin", "Ramadan Program"],
-    addedValues: ["Spiritual Growth", "Komunitas"],
-    color: "from-emerald-500/20 to-green-500/20",
+      "Rohani Elektro adalah bidang yang berfungsi untuk menyalakan iklim keagamaan di Departemen Teknik Elektro. Serta sebagai perpanjangan tangan FUSI FTUI di lingkup departemen ",
+    programs: ["KIAS", "RASIK"],
+    addedValues: ["leadership", "Critical Thinking"],
     logoDark: "/retroDark.webp",
     logoLight: "/retroLight.webp",
   },
@@ -183,13 +140,10 @@ export const divisi: Divisi[] = [
     id: 11,
     name: "Kreasi Mahasiswa",
     abbr: "SIWA",
-    description: "Seni, budaya, dan kreativitas",
     fullDescription:
       "Bidang Kreasi Mahasiswa menjaring, mewadahi, dan mengapresiasi minat dan bakat warga Departemen Teknik Elektro dalam bidang seni, dan Olahraga. Serta mencriptakan suasana bersenang-senang di DTE.",
-    icon: Music,
     programs: ["Gladiator", "Electrical Engineering Cup"],
     addedValues: ["Project Management", "Talent Management"],
-    color: "from-fuchsia-500/20 to-pink-500/20",
     logoDark: "/siwaDark.webp",
     logoLight: "/siwaLight.webp",
   },
@@ -197,13 +151,10 @@ export const divisi: Divisi[] = [
     id: 12,
     name: "Keuangan dan Kewirausahaan",
     abbr: "KEWIRUS",
-    description: "Keuangan dan entrepreneurship",
     fullDescription:
       "Keuangan dan Kewirausahaan bertanggung jawab atas keuangan dan kewirausahaan IME FTUI. KEWIRUS bertanggung jawab atas seluruh pemasukan dan pengeluaran IME FTUI, serta pencarian pemasukan keuangan untuk dana lembaga IME FTUI. KEWIRUS juga bertanggungjawab untuk mengembangkan skill dan semangat kewirausahaan kepada mahasiswa di DTE.",
-    icon: Wallet,
     programs: ["Audit Keuangan", "ELEMENT"],
     addedValues: ["Financial Management", "Entrepreneurship"],
-    color: "from-lime-500/20 to-green-500/20",
     logoDark: "/wirusDark.webp",
     logoLight: "/wirusLight.webp",
   },

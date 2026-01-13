@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Merriweather } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -61,8 +62,8 @@ export default function RootLayout({
         className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
       >
         <LenisProvider>{children}</LenisProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );
 }
-1;

@@ -5,6 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import {
+  REGISTRATION_OPEN,
+  REGISTRATION_FORM_URL,
+} from "@/app/recruitment/data";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -27,6 +32,14 @@ export const Header = memo(function Header() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+  };
+
+  const handleRegisterClick = () => {
+    if (!REGISTRATION_OPEN) {
+      toast("Coming Soon");
+      return;
+    }
+    window.open(REGISTRATION_FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   const navItems = [
@@ -76,18 +89,13 @@ export const Header = memo(function Header() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           )}
-          <Link
-            href="https://forms.gle/h8QMy68MRfBip7Qq5"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            size="sm"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
+            onClick={handleRegisterClick}
           >
-            <Button
-              size="sm"
-              className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
-            >
-              Daftar
-            </Button>
-          </Link>
+            Daftar
+          </Button>
         </div>
       </nav>
     </header>
