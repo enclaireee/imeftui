@@ -148,6 +148,8 @@ export const divisi: Divisi[] = [
     programs: ["Elektro Charity", "Sociotalk"],
     addedValues: ["Social Awareness", ""],
     color: "from-secondary/20 to-secondary/10",
+    logoDark: "/pengmasDark.webp",
+    logoLight: "/pengmasLight.webp",
   },
   {
     id: 9,
@@ -188,6 +190,8 @@ export const divisi: Divisi[] = [
     programs: ["Gladiator", "Electrical Engineering Cup"],
     addedValues: ["Project Management", "Talent Management"],
     color: "from-fuchsia-500/20 to-pink-500/20",
+    logoDark: "/siwaDark.webp",
+    logoLight: "/siwaLight.webp",
   },
   {
     id: 12,
