@@ -7,12 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Sparkles, CheckCircle2, X, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  divisi,
-  Divisi,
-  REGISTRATION_OPEN,
-  REGISTRATION_FORM_URL,
-} from "../data";
+import { divisi, Divisi, REGISTRATION_OPEN } from "../data";
+import { toast } from "sonner";
 
 // Memoized card component - simplified without layoutId for better performance
 const DivisiCard = memo(function DivisiCard({
@@ -223,14 +219,23 @@ export const DivisiSection = memo(function DivisiSection() {
                       <Button
                         className="w-full rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
                         onClick={() => {
+                          if (!selectedDivisi.tugasUrl) {
+                            toast("Coming Soon", {
+                              description: "Tugas bidang belum tersedia.",
+                              icon: (
+                                <Sparkles className="w-5 h-5 text-yellow-400" />
+                              ),
+                            });
+                            return;
+                          }
                           window.open(
-                            REGISTRATION_FORM_URL,
+                            selectedDivisi.tugasUrl,
                             "_blank",
                             "noopener,noreferrer"
                           );
                         }}
                       >
-                        Daftar Sekarang
+                        Tugas Bidang
                         <ChevronRight className="w-4 h-4 ml-1" />
                       </Button>
                     ) : (

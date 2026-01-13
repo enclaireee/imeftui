@@ -3,7 +3,7 @@
 import { memo, useEffect, useState, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import {
@@ -36,7 +36,10 @@ export const Header = memo(function Header() {
 
   const handleRegisterClick = () => {
     if (!REGISTRATION_OPEN) {
-      toast("Coming Soon");
+      toast("Coming Soon", {
+        description: "Pendaftaran akan segera dibuka.",
+        icon: <Sparkles className="w-5 h-5 text-yellow-400" />,
+      });
       return;
     }
     window.open(REGISTRATION_FORM_URL, "_blank", "noopener,noreferrer");

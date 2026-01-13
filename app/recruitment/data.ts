@@ -23,6 +23,7 @@ export interface Divisi {
   addedValues: string[];
   logoDark: string;
   logoLight: string;
+  tugasUrl?: string;
 }
 
 export const divisi: Divisi[] = [
@@ -36,6 +37,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Akademis", "Perumusan Materi"],
     logoDark: "/akproDark.webp",
     logoLight: "/akproLight.webp",
+    tugasUrl: "",
   },
   {
     id: 2,
@@ -47,6 +49,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Copywriting", "Issue Analysis"],
     logoDark: "/kastratDark.webp",
     logoLight: "/kastratLight.webp",
+    tugasUrl: "",
   },
   {
     id: 3,
@@ -58,6 +61,7 @@ export const divisi: Divisi[] = [
     addedValues: ["People Management", "Critical Thinking"],
     logoDark: "/kemaDark.webp",
     logoLight: "/kemaLight.webp",
+    tugasUrl: "",
   },
   {
     id: 4,
@@ -69,6 +73,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Mental health Awareness", "Administrasi"],
     logoDark: "/kesmaDark.webp",
     logoLight: "/kesmaLight.webp",
+    tugasUrl: "",
   },
   {
     id: 5,
@@ -80,6 +85,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Copywriting", "Administrasi"],
     logoDark: "/kestariDark.webp",
     logoLight: "/kestariLight.webp",
+    tugasUrl: "",
   },
   {
     id: 6,
@@ -91,6 +97,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Graphic Design", "Relasi dengan Alumni"],
     logoDark: "/kominDark.webp",
     logoLight: "/kominLight.webp",
+    tugasUrl: "",
   },
   {
     id: 7,
@@ -102,6 +109,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Consulting", "Structured Problem Solving"],
     logoDark: "/litbangDark.webp",
     logoLight: "/litbangLight.webp",
+    tugasUrl: "",
   },
   {
     id: 8,
@@ -113,6 +121,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Environmental Awareness", "Communication"],
     logoDark: "/pengmasDark.webp",
     logoLight: "/pengmasLight.webp",
+    tugasUrl: "",
   },
   {
     id: 9,
@@ -124,6 +133,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Project management", "Communication"],
     logoDark: "/piptekDark.webp",
     logoLight: "/piptekLight.webp",
+    tugasUrl: "",
   },
   {
     id: 10,
@@ -135,6 +145,7 @@ export const divisi: Divisi[] = [
     addedValues: ["leadership", "Critical Thinking"],
     logoDark: "/retroDark.webp",
     logoLight: "/retroLight.webp",
+    tugasUrl: "",
   },
   {
     id: 11,
@@ -146,6 +157,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Project Management", "Talent Management"],
     logoDark: "/siwaDark.webp",
     logoLight: "/siwaLight.webp",
+    tugasUrl: "",
   },
   {
     id: 12,
@@ -157,6 +169,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Financial Management", "Entrepreneurship"],
     logoDark: "/wirusDark.webp",
     logoLight: "/wirusLight.webp",
+    tugasUrl: "",
   },
 ];
 

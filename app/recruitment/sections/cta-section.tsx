@@ -2,10 +2,10 @@
 
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import Link from "next/link";
-import { REGISTRATION_FORM_URL } from "../data";
+import { toast } from "sonner";
+import { REGISTRATION_FORM_URL, REGISTRATION_OPEN } from "../data";
 
 export const CTASection = memo(function CTASection() {
   return (
@@ -28,19 +28,27 @@ export const CTASection = memo(function CTASection() {
               Jangan lewatkan kesempatan untuk menjadi bagian dari IME FTUI
               2026. Daftar sekarang dan mulai perjalananmu!
             </p>
-            <Link
-              href={REGISTRATION_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
+              onClick={() => {
+                if (!REGISTRATION_OPEN) {
+                  toast("Coming Soon", {
+                    description: "Pendaftaran akan segera dibuka.",
+                    icon: <Sparkles className="w-5 h-5 text-yellow-400" />,
+                  });
+                  return;
+                }
+                window.open(
+                  REGISTRATION_FORM_URL,
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
             >
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
-              >
-                Daftar Sekarang
-                <ExternalLink className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
+              Daftar Sekarang
+              <ExternalLink className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </motion.div>
       </div>

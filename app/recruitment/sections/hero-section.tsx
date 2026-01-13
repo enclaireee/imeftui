@@ -60,7 +60,10 @@ const AnimatedSubtitle = memo(function AnimatedSubtitle() {
 const CTAButton = memo(function CTAButton() {
   const handleClick = () => {
     if (!REGISTRATION_OPEN) {
-      toast("Coming Soon");
+      toast("Coming Soon", {
+        description: "Pendaftaran akan segera dibuka.",
+        icon: <Sparkles className="w-5 h-5 text-yellow-400" />,
+      });
       return;
     }
     window.open(REGISTRATION_FORM_URL, "_blank", "noopener,noreferrer");
