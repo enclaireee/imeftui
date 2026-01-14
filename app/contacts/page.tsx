@@ -13,7 +13,6 @@ export default function ContactPage() {
       <Header />
 
       <div className="bg-gradient-content bg-noise relative min-h-screen">
-        {/* Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[15%] right-[-10%] w-[600px] h-[600px] bg-primary/25 rounded-full blur-[100px] opacity-40 dark:opacity-20" />
           <div className="absolute bottom-[20%] left-[-15%] w-[500px] h-[500px] bg-secondary/25 rounded-full blur-[100px] opacity-30 dark:opacity-15" />

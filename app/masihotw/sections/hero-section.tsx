@@ -66,7 +66,6 @@ const CTAButton = memo(function CTAButton() {
   );
 });
 
-// Memoized scroll indicator to prevent re-renders
 const ScrollIndicator = memo(function ScrollIndicator() {
   return (
     <motion.div
