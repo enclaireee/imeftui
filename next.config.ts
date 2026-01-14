@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       {
         source: "/",
         destination: "/wip",
-        permanent: false, // Set to false for temporary redirect
+        permanent: false, // Temporary redirect (302) - use true for permanent (301)
       },
     ];
   },
