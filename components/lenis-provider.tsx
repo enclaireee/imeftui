@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, ReactNode } from "react";
 import Lenis from "lenis";
 
 interface LenisProviderProps {
@@ -8,8 +8,6 @@ interface LenisProviderProps {
 }
 
 export function LenisProvider({ children }: LenisProviderProps) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -17,10 +15,8 @@ export function LenisProvider({ children }: LenisProviderProps) {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      autoRaf: true, // Let Lenis manage its own RAF loop efficiently
+      autoRaf: true,
     });
-
-    lenisRef.current = lenis;
 
     return () => {
       lenis.destroy();

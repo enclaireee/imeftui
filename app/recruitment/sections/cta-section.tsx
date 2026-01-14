@@ -2,10 +2,9 @@
 
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
-import { toast } from "sonner";
-import { REGISTRATION_FORM_URL, REGISTRATION_OPEN } from "../data";
+import { handleRegistrationClick } from "@/lib/registration";
 
 export const CTASection = memo(function CTASection() {
   return (
@@ -31,20 +30,7 @@ export const CTASection = memo(function CTASection() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
-              onClick={() => {
-                if (!REGISTRATION_OPEN) {
-                  toast("Coming Soon", {
-                    description: "Pendaftaran akan segera dibuka.",
-                    icon: <Sparkles className="w-5 h-5 text-yellow-400" />,
-                  });
-                  return;
-                }
-                window.open(
-                  REGISTRATION_FORM_URL,
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
+              onClick={handleRegistrationClick}
             >
               Daftar Sekarang
               <ExternalLink className="w-5 h-5 ml-2" />

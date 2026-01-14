@@ -1,13 +1,15 @@
+import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { REGISTRATION_FORM_URL } from "@/app/recruitment/data";
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   const links = [
     { label: "Bidang", href: "#divisi" },
     { label: "Timeline", href: "#timeline" },
     { label: "FAQ", href: "#faq" },
-    { label: "Daftar Sekarang", href: "https://forms.gle/J77oDLFtwcrEqvmz9" },
+    { label: "Daftar Sekarang", href: REGISTRATION_FORM_URL },
   ];
 
   return (
@@ -97,7 +99,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gray-400 shrink-0" />
                 <a
-                  href="mailto:nestui.ft@gmail.com"
+                  href="mailto:imeftui2026@gmail.com"
                   className="text-gray-600 hover:text-black text-sm transition-colors"
                 >
                   imeftui2026@gmail.com
@@ -107,26 +109,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
+        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-center">
+          <p className="text-gray-500 text-xs sm:text-sm text-center">
             © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="#"
-              className="text-gray-400 hover:text-gray-600 text-xs sm:text-sm transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-400 hover:text-gray-600 text-xs sm:text-sm transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
   );
-}
+});

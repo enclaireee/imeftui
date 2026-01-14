@@ -3,13 +3,9 @@
 import { memo, useEffect, useState, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Sparkles } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import {
-  REGISTRATION_OPEN,
-  REGISTRATION_FORM_URL,
-} from "@/app/recruitment/data";
+import { handleRegistrationClick } from "@/lib/registration";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -27,22 +23,12 @@ export const Header = memo(function Header() {
   const toggleTheme = () => {
     const newIsDark = !isDark;
     setIsDark(newIsDark);
+    localStorage.theme = newIsDark ? "dark" : "light";
     if (newIsDark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  };
-
-  const handleRegisterClick = () => {
-    if (!REGISTRATION_OPEN) {
-      toast("Coming Soon", {
-        description: "Pendaftaran akan segera dibuka.",
-        icon: <Sparkles className="w-5 h-5 text-yellow-400" />,
-      });
-      return;
-    }
-    window.open(REGISTRATION_FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   const navItems = [
@@ -104,7 +90,7 @@ export const Header = memo(function Header() {
           <Button
             size="sm"
             className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
-            onClick={handleRegisterClick}
+            onClick={handleRegistrationClick}
           >
             Daftar
           </Button>
