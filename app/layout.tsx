@@ -89,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="dark">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <JsonLd data={[imeOrganizationSchema, imeWebsiteSchema]} />
         <script
@@ -97,23 +97,20 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('theme');
+                  var stored = localStorage.getItem('theme');
                   var html = document.documentElement;
-                  // Default to dark mode unless explicitly set to light
-                  if (theme === 'light') {
-                    html.classList.remove('dark');
+
+                  if (stored === 'light') {
                     html.classList.add('light');
-                  } else {
-                    // Ensure dark mode is applied (default)
-                    html.classList.remove('light');
+                  } else if (stored === 'dark') {
                     html.classList.add('dark');
-                    // Set default if not already set
-                    if (!theme) {
-                      localStorage.setItem('theme', 'dark');
-                    }
+                  } else {
+                    // No stored preference - use system preference
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    html.classList.add(prefersDark ? 'dark' : 'light');
                   }
                 } catch (e) {
-                  // If localStorage fails, ensure dark mode is still applied
+                  // Fallback to dark mode if localStorage fails
                   document.documentElement.classList.add('dark');
                 }
               })();

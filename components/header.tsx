@@ -22,12 +22,15 @@ export const Header = memo(function Header() {
 
   const toggleTheme = () => {
     const newIsDark = !isDark;
+    const html = document.documentElement;
     setIsDark(newIsDark);
-    localStorage.theme = newIsDark ? "dark" : "light";
+    localStorage.setItem("theme", newIsDark ? "dark" : "light");
     if (newIsDark) {
-      document.documentElement.classList.add("dark");
+      html.classList.remove("light");
+      html.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      html.classList.remove("dark");
+      html.classList.add("light");
     }
   };
 

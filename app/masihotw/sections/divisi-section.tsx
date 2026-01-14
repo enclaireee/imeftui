@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { divisi, Divisi, REGISTRATION_OPEN } from "../data";
 import { toast } from "sonner";
 
-// Memoized card component - simplified without layoutId for better performance
 const DivisiCard = memo(function DivisiCard({
   div,
   index,
@@ -30,7 +29,6 @@ const DivisiCard = memo(function DivisiCard({
       className="glass-card glass-card-hover rounded-xl p-3 sm:p-4 cursor-pointer group relative z-10"
     >
       <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center mb-2 sm:mb-3 overflow-hidden">
-        {/* Dark mode logo */}
         <Image
           src={div.logoDark}
           alt={div.abbr}
@@ -38,7 +36,6 @@ const DivisiCard = memo(function DivisiCard({
           height={56}
           className="hidden dark:block object-contain w-full h-full"
         />
-        {/* Light mode logo */}
         <Image
           src={div.logoLight}
           alt={div.abbr}
@@ -76,7 +73,7 @@ export const DivisiSection = memo(function DivisiSection() {
         >
           <Badge
             variant="outline"
-            className="mb-4 px-4 py-2 text-sm border-primary/30 bg-primary/5"
+            className="mb-4 px-4 py-2 text-sm border-primary/30"
           >
             12 Bidang
           </Badge>

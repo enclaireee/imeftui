@@ -19,7 +19,7 @@ export const TimelineSection = memo(function TimelineSection() {
         >
           <Badge
             variant="outline"
-            className="mb-4 px-4 py-2 text-sm border-primary/30 bg-primary/5"
+            className="mb-4 px-4 py-2 text-sm border-primary/30"
           >
             <Calendar className="w-4 h-4 mr-2" />
             Timeline
