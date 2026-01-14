@@ -95,13 +95,28 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              try {
-                if (localStorage.theme === 'light') {
-                  document.documentElement.classList.remove('dark')
-                } else {
-                  document.documentElement.classList.add('dark')
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var html = document.documentElement;
+                  // Default to dark mode unless explicitly set to light
+                  if (theme === 'light') {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                  } else {
+                    // Ensure dark mode is applied (default)
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    // Set default if not already set
+                    if (!theme) {
+                      localStorage.setItem('theme', 'dark');
+                    }
+                  }
+                } catch (e) {
+                  // If localStorage fails, ensure dark mode is still applied
+                  document.documentElement.classList.add('dark');
                 }
-              } catch (_) {}
+              })();
             `,
           }}
         />
