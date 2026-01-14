@@ -1,5 +1,6 @@
 export { HeroSection } from "./hero-section";
 export { StatsSection } from "./stats-section";
+export { LogoShowcase } from "./logo-showcase";
 export { DivisiSection } from "./divisi-section";
 export { BenefitsSection } from "./benefits-section";
 export { GallerySection } from "./gallery-section";

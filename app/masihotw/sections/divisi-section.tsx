@@ -97,11 +97,9 @@ export const DivisiSection = memo(function DivisiSection() {
         </div>
       </div>
 
-      {/* Optimized Modal - Simple fade + scale instead of complex layoutId */}
       <AnimatePresence>
         {selectedDivisi && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

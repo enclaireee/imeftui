@@ -4,6 +4,7 @@ import {
   HeroSection,
   StatsSection,
   BenefitsSection,
+  LogoShowcase,
   DivisiSection,
   GallerySection,
   TimelineSection,
@@ -131,6 +132,7 @@ export default function RecruitmentPage() {
         <div className="relative z-10">
           <StatsSection />
           <BenefitsSection />
+          <LogoShowcase />
           <DivisiSection />
           <GallerySection />
           <TimelineSection />

@@ -1,7 +1,8 @@
 "use client";
 
-import { memo, useEffect, useState, useLayoutEffect } from "react";
+import { memo, useEffect, useState, useLayoutEffect, useCallback } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,8 @@ const useIsomorphicLayoutEffect =
 export const Header = memo(function Header() {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useIsomorphicLayoutEffect(() => {
     setMounted(true);
@@ -35,16 +38,49 @@ export const Header = memo(function Header() {
   };
 
   const navItems = [
-    { label: "Bidang", href: "#divisi" },
-    { label: "Timeline", href: "#timeline" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "/contact" },
+    { label: "Bidang", href: "/masihotw", hash: "divisi" },
+    { label: "Timeline", href: "/masihotw", hash: "timeline" },
+    { label: "FAQ", href: "/masihotw", hash: "faq" },
+    { label: "Contact", href: "/contacts", hash: null },
   ];
+
+  const handleNavClick = useCallback(
+    (
+      e: React.MouseEvent<HTMLAnchorElement>,
+      href: string,
+      hash: string | null
+    ) => {
+      if (!hash) return; // Let normal navigation happen for non-hash links
+
+      e.preventDefault();
+
+      const scrollToElement = () => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          // Clean up the URL after a short delay
+          setTimeout(() => {
+            history.replaceState(null, "", href);
+          }, 100);
+        }
+      };
+
+      // If we're already on the target page, just scroll
+      if (pathname === href) {
+        scrollToElement();
+      } else {
+        // Navigate to the page first, then scroll
+        router.push(`${href}#${hash}`);
+        // The hash will be in URL briefly, then cleaned by the page's scroll behavior
+      }
+    },
+    [pathname, router]
+  );
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
       <nav className="glass-card rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between backdrop-blur-xl">
-        <Link href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <div className="relative w-[100px] h-[50px]">
             <Image
               src="/logoNama.webp"
@@ -66,8 +102,9 @@ export const Header = memo(function Header() {
         <div className="hidden sm:flex items-center gap-6">
           {navItems.map((item) => (
             <Link
-              key={item.href}
-              href={item.href}
+              key={item.href + item.hash}
+              href={item.hash ? `${item.href}#${item.hash}` : item.href}
+              onClick={(e) => handleNavClick(e, item.href, item.hash)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
