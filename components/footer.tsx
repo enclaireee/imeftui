@@ -2,7 +2,7 @@ import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
-import { REGISTRATION_FORM_URL } from "@/app/recruitment/data";
+import { REGISTRATION_FORM_URL } from "@/app/masihotw/data";
 
 export const Footer = memo(function Footer() {
   const links = [

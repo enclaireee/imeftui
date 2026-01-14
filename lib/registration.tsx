@@ -2,10 +2,7 @@
 
 import { Sparkles } from "lucide-react";
 import { toast } from "sonner";
-import {
-  REGISTRATION_OPEN,
-  REGISTRATION_FORM_URL,
-} from "@/app/recruitment/data";
+import { REGISTRATION_OPEN, REGISTRATION_FORM_URL } from "@/app/masihotw/data";
 
 /**
  * Shared handler for registration button clicks.
