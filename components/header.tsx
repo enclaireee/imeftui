@@ -38,6 +38,7 @@ export const Header = memo(function Header() {
     { label: "Bidang", href: "#divisi" },
     { label: "Timeline", href: "#timeline" },
     { label: "FAQ", href: "#faq" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (

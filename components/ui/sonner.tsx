@@ -16,7 +16,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           title:
             "text-black dark:text-foreground font-medium text-sm whitespace-nowrap",
           description:
-            "text-black/80 dark:text-muted-foreground text-xs mt-1 hidden sm:block",
+            "text-black dark:text-muted-foreground text-xs mt-1 hidden sm:block",
           content: "",
           icon: "text-primary",
         },
