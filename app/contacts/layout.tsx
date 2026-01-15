@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Contact | IME FTUI 2026",
     description:
       "Hubungi contact person Open Recruitment IME FTUI 2026. Punya pertanyaan? Kami siap membantu!",
-    url: "https://imeftui.com/contact",
+    url: "https://imeftui.com/contacts",
     type: "website",
     locale: "id_ID",
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Hubungi contact person Open Recruitment IME FTUI 2026. Punya pertanyaan? Kami siap membantu!",
   },
   alternates: {
-    canonical: "https://imeftui.com/contact",
+    canonical: "https://imeftui.com/contacts",
   },
 };
 
