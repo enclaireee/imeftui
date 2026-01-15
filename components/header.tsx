@@ -13,9 +13,9 @@ const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const navItems = [
-  { label: "Bidang", href: "/masihotw", hash: "divisi" },
-  { label: "Timeline", href: "/masihotw", hash: "timeline" },
-  { label: "FAQ", href: "/masihotw", hash: "faq" },
+  { label: "Bidang", href: "/recruitment", hash: "divisi" },
+  { label: "Timeline", href: "/recruitment", hash: "timeline" },
+  { label: "FAQ", href: "/recruitment", hash: "faq" },
   { label: "Contact", href: "/contacts", hash: null },
 ];
 
