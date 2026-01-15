@@ -6,14 +6,14 @@ export interface Narahubung {
 export const narahubung: Narahubung[] = [
   {
     name: "Grace",
-    line: "",
+    line: "graciayohan",
   },
   {
     name: "Amira",
-    line: "",
+    line: "cheezypeezy",
   },
   {
     name: "Diandra",
-    line: "",
+    line: "diandra.pramesti.10d",
   }
 ];

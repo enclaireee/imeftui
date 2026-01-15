@@ -9,7 +9,7 @@ import {
   ExternalLink,
   Github,
 } from "lucide-react";
-import { REGISTRATION_FORM_URL } from "@/app/masihotw/data";
+import { REGISTRATION_FORM_URL } from "@/app/recruitment/data";
 
 export const Footer = memo(function Footer() {
   const links = [

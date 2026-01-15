@@ -33,7 +33,6 @@ const MarqueeCard = memo(function MarqueeCard({
 });
 
 export const GallerySection = memo(function GallerySection() {
-  // Memoize duplicated arrays to prevent recreation on each render
   const duplicatedGallery = useMemo(() => [...gallery, ...gallery], []);
 
   const { duplicatedFirstHalf, duplicatedSecondHalf } = useMemo(() => {
