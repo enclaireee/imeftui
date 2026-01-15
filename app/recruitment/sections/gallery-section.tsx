@@ -39,18 +39,8 @@ export const GallerySection = memo(function GallerySection() {
     const firstHalf = gallery.slice(0, Math.ceil(gallery.length / 2));
     const secondHalf = gallery.slice(Math.ceil(gallery.length / 2));
     return {
-      duplicatedFirstHalf: [
-        ...firstHalf,
-        ...firstHalf,
-        ...firstHalf,
-        ...firstHalf,
-      ],
-      duplicatedSecondHalf: [
-        ...secondHalf,
-        ...secondHalf,
-        ...secondHalf,
-        ...secondHalf,
-      ],
+      duplicatedFirstHalf: [...firstHalf, ...firstHalf],
+      duplicatedSecondHalf: [...secondHalf, ...secondHalf],
     };
   }, []);
 

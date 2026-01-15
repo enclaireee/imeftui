@@ -48,7 +48,10 @@ export const TimelineSection = memo(function TimelineSection() {
                   key={item.event}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: Math.min(index * 0.02, 0.1),
+                  }}
                   viewport={{ once: true, margin: "-50px" }}
                   className="text-center"
                 >
@@ -97,7 +100,10 @@ export const TimelineSection = memo(function TimelineSection() {
                 key={item.event}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: Math.min(index * 0.02, 0.1),
+                }}
                 viewport={{ once: true, margin: "-50px" }}
                 className="relative flex gap-4 pb-6 last:pb-0"
               >

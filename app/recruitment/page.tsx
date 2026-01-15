@@ -47,7 +47,7 @@ export default function RecruitmentPage() {
               className="w-40 md:w-72 object-contain -rotate-12"
             />
           </div>
-          <div className="absolute top-[20%] -right-10 md:right-0 opacity-60">
+          <div className="absolute top-[20%] -right-10 md:right-0 opacity-60 hidden md:block">
             <Image
               src="/element2.webp"
               alt=""
@@ -67,7 +67,7 @@ export default function RecruitmentPage() {
               className="w-56 md:w-96 object-contain rotate-6"
             />
           </div>
-          <div className="absolute top-[45%] -left-12 md:left-0 opacity-60">
+          <div className="absolute top-[45%] -left-12 md:left-0 opacity-60 hidden md:block">
             <Image
               src="/element3.webp"
               alt=""
@@ -87,7 +87,7 @@ export default function RecruitmentPage() {
               className="w-48 md:w-80 object-contain -rotate-6"
             />
           </div>
-          <div className="absolute top-[65%] -right-12 md:right-0 opacity-60">
+          <div className="absolute top-[65%] -right-12 md:right-0 opacity-60 hidden md:block">
             <Image
               src="/element4.webp"
               alt=""
@@ -107,7 +107,7 @@ export default function RecruitmentPage() {
               className="w-44 md:w-72 object-contain rotate-12"
             />
           </div>
-          <div className="absolute bottom-40 -left-8 md:left-0 opacity-60">
+          <div className="absolute bottom-40 -left-8 md:left-0 opacity-60 hidden md:block">
             <Image
               src="/element5.webp"
               alt=""
@@ -117,7 +117,7 @@ export default function RecruitmentPage() {
               className="w-36 md:w-64 object-contain rotate-12"
             />
           </div>
-          <div className="absolute bottom-20 -right-8 md:right-[10%] opacity-60">
+          <div className="absolute bottom-20 -right-8 md:right-[10%] opacity-60 hidden md:block">
             <Image
               src="/element5.webp"
               alt=""

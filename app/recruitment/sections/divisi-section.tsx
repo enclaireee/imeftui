@@ -24,7 +24,7 @@ const DivisiCard = memo(function DivisiCard({
       onClick={onClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      transition={{ duration: 0.3, delay: Math.min(index * 0.02, 0.12) }}
       viewport={{ once: true, margin: "-50px" }}
       className="glass-card glass-card-hover rounded-xl p-3 sm:p-4 cursor-pointer group relative z-10"
     >
