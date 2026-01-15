@@ -6,7 +6,7 @@ import { divisi } from "../data";
 
 export const LogoShowcase = memo(function LogoShowcase() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6">
+    <section className="hidden sm:block py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Logo Grid - Clean and minimal */}
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8">

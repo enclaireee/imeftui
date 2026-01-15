@@ -1,7 +1,14 @@
 import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import {
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  ExternalLink,
+  Github,
+} from "lucide-react";
 import { REGISTRATION_FORM_URL } from "@/app/masihotw/data";
 
 export const Footer = memo(function Footer() {
@@ -37,7 +44,7 @@ export const Footer = memo(function Footer() {
                 href="https://www.instagram.com/imeftui/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </Link>
@@ -45,13 +52,13 @@ export const Footer = memo(function Footer() {
                 href="https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
               <a
-                href="mailto:imeftui2026@gmail.com"
-                className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
+                href="mailto:imeftui@gmail.com"
+                className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -99,20 +106,28 @@ export const Footer = memo(function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gray-400 shrink-0" />
                 <a
-                  href="mailto:imeftui2026@gmail.com"
+                  href="mailto:imeftui@gmail.com"
                   className="text-gray-600 hover:text-black text-sm transition-colors"
                 >
-                  imeftui2026@gmail.com
+                  imeftui@gmail.com
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-center">
-          <p className="text-gray-500 text-xs sm:text-sm text-center">
+        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
             © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
           </p>
+          <Link
+            href="https://github.com/enclaireee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 md:mt-0 text-black transition-colors"
+          >
+            <Github className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </footer>

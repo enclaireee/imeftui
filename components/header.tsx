@@ -130,7 +130,7 @@ export const Header = memo(function Header() {
           )}
           <Button
             size="sm"
-            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
+            className="rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:inline-flex"
             onClick={handleRegistrationClick}
           >
             Daftar

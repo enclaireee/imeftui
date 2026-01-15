@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { narahubung } from "./data";
 
 export default function ContactPage() {
   return (
@@ -87,23 +88,21 @@ export default function ContactPage() {
               </p>
             </motion.div>
 
-            {/* Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="space-y-10"
             >
-              {/* Email Section */}
               <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">
                   Email
                 </p>
                 <a
-                  href="mailto:imeftui2026@gmail.com"
+                  href="mailto:imeftui@gmail.com"
                   className="text-2xl sm:text-3xl font-medium text-foreground hover:text-primary transition-colors"
                 >
-                  imeftui2026@gmail.com
+                  imeftui@gmail.com
                 </a>
               </div>
 
@@ -113,32 +112,24 @@ export default function ContactPage() {
                   Narahubung
                 </p>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-4 p-4 glass-card rounded-2xl">
-                    <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <User className="w-5 h-5 text-primary" />
+                  {narahubung.map((contact, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-4 p-4 glass-card rounded-2xl"
+                    >
+                      <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                        <User className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="font-medium text-foreground">
+                          {contact.name}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          Line: {contact.line}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className="font-medium text-foreground">
-                        Contact Person 1
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Line: placeholder_line_1
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 glass-card rounded-2xl">
-                    <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <User className="w-5 h-5 text-primary" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-medium text-foreground">
-                        Contact Person 2
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Line: placeholder_line_2
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 

@@ -32,9 +32,9 @@ export const divisi: Divisi[] = [
     name: "Akademis dan Profesi",
     abbr: "AKPRO",
     fullDescription:
-      "Akademis dan Profesi IME FTUI bertanggungjawab untuk mengadvokasi keperluan akademis dan pasca-kampus mahasiswa Departemen Teknik Elektro.",
-    programs: ["Diktat", "Asistensi Matkul"],
-    addedValues: ["Akademis", "Perumusan Materi"],
+      "Akademis dan Profesi IME FTUI atau Akademis dan Keprofesian merupakan bidang yang bertanggungjawab dalam mengadvokasi, mewadahi, serta memfasilitasi warga DTE dalam aspek akademis dan pascakampus.",
+    programs: ["Diktat", "Company Visit"],
+    addedValues: ["Academic Skill", "Professional Networking"],
     logoDark: "/akproDark.webp",
     logoLight: "/akproLight.webp",
     tugasUrl: "",
@@ -70,7 +70,7 @@ export const divisi: Divisi[] = [
     fullDescription:
       "Kesejahteraan Mahasiswa IME FTUI adalah bidang yang berfungsi untuk mengadvokasi kesehatan mental, kebutuhan fasilitas, dan finansial mahasiswa Departemen Teknik Elektro.",
     programs: ["KENTAL", "Electrical Engineering Foundation"],
-    addedValues: ["Mental health Awareness", "Administrasi"],
+    addedValues: ["Mental health Awareness", "Advocating Student Needs"],
     logoDark: "/kesmaDark.webp",
     logoLight: "/kesmaLight.webp",
     tugasUrl: "",
@@ -117,7 +117,7 @@ export const divisi: Divisi[] = [
     abbr: "PENGMAS",
     fullDescription:
       "Pengabdian Masyarakat adalah bidang IME FTUI yang bertanggung jawab untuk mewadahi dan menumbuhkan sikap kepedulian mahasiswa DTE terhadap masyarakat dan lingkungan hidup, serta menyalurkan core competence DTE kepada masyarakat.",
-    programs: ["Elektro Charity", "Sociotalk"],
+    programs: ["Elektro Charity", "GRBM"],
     addedValues: ["Environmental Awareness", "Communication"],
     logoDark: "/pengmasDark.webp",
     logoLight: "/pengmasLight.webp",

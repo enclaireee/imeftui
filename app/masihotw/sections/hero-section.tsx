@@ -146,7 +146,7 @@ export const HeroSection = memo(function HeroSection() {
           >
             <Badge
               variant="outline"
-              className="hidden md:inline-flex mb-6 px-4 py-2 text-sm border-primary/30"
+              className="mb-6 px-4 py-2 text-sm border-primary/30"
             >
               <Sparkles className="w-4 h-4 mr-2 text-primary" />
               Open Recruitment IME FTUI 2026

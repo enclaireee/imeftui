@@ -29,7 +29,7 @@ export const CTASection = memo(function CTASection() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-full glow"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-medium rounded-lg glow"
               onClick={handleRegistrationClick}
             >
               Daftar Sekarang
