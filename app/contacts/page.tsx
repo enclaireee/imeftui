@@ -3,166 +3,126 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { motion } from "motion/react";
-import { ArrowUpRight, User } from "lucide-react";
+import { ArrowUpRight, Copy } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { narahubung } from "./data";
+import { useState } from "react";
+
+function LineContact({ name, lineId }: { name: string; lineId: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(lineId);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="group flex items-center justify-between w-full py-3 border-b border-foreground/5 last:border-0 text-left hover:text-primary transition-colors"
+    >
+      <div>
+        <span className="font-medium">{name}</span>
+        <span className="text-muted-foreground font-mono text-sm ml-3">
+          Line: {lineId}
+        </span>
+      </div>
+      {copied ? (
+        <span className="text-xs text-green-500">tersalin</span>
+      ) : (
+        <Copy className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-60 transition-opacity" />
+      )}
+    </button>
+  );
+}
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background bg-noise">
+    <main className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <div className="bg-gradient-content bg-noise relative min-h-screen">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[15%] right-[-10%] w-[600px] h-[600px] bg-primary/25 rounded-full blur-[100px] opacity-40 dark:opacity-20" />
-          <div className="absolute bottom-[20%] left-[-15%] w-[500px] h-[500px] bg-secondary/25 rounded-full blur-[100px] opacity-30 dark:opacity-15" />
+      <div className="flex-1 flex items-center justify-center px-6">
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="w-full max-w-md py-32"
+        >
+          {/* Heading */}
+          <div className="text-center mb-10">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+              Hubungi Kami<span className="text-primary">.</span>
+            </h1>
+            <p className="text-muted-foreground">
+              Kontak kami apabila memiliki pertanyaan lebih lanjut.
+            </p>
+          </div>
 
-          <div className="absolute top-32 -right-8 md:right-[5%] opacity-50">
-            <Image
-              src="/element3.webp"
-              alt=""
-              width={200}
-              height={200}
-              loading="lazy"
-              className="w-32 md:w-48 object-contain -rotate-12"
-            />
-          </div>
-          <div className="absolute top-[45%] -left-10 md:left-[3%] opacity-50">
-            <Image
-              src="/element4.webp"
-              alt=""
-              width={200}
-              height={200}
-              loading="lazy"
-              className="w-36 md:w-56 object-contain rotate-6"
-            />
-          </div>
-          <div className="absolute top-[35%] -right-10 md:right-[8%] opacity-40">
-            <Image
-              src="/element2.webp"
-              alt=""
-              width={180}
-              height={180}
-              loading="lazy"
-              className="w-28 md:w-40 object-contain rotate-12"
-            />
-          </div>
-          <div className="absolute bottom-40 -left-8 md:left-[8%] opacity-50">
-            <Image
-              src="/element1.webp"
-              alt=""
-              width={180}
-              height={180}
-              loading="lazy"
-              className="w-28 md:w-40 object-contain rotate-12"
-            />
-          </div>
-          <div className="absolute bottom-24 -right-8 md:right-[12%] opacity-40">
-            <Image
-              src="/element5.webp"
-              alt=""
-              width={160}
-              height={160}
-              loading="lazy"
-              className="w-24 md:w-32 object-contain -rotate-6"
-            />
-          </div>
-        </div>
-
-        <section className="relative z-10 pt-40 sm:pt-48 pb-24 px-6">
-          <div className="max-w-2xl mx-auto">
-            {/* Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-12"
-            >
-              <h1 className="text-5xl sm:text-6xl font-bold text-foreground tracking-tight mb-4">
-                Hubungi Kami<span className="text-primary">.</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Ada pertanyaan atau ingin berkolaborasi? Kami senang mendengar
-                dari Anda.
+          {/* Main Card */}
+          <div className="glass-card rounded-2xl p-6 space-y-6">
+            {/* Email */}
+            <div>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                Email
               </p>
-            </motion.div>
+              <a
+                href="mailto:imeftui@gmail.com"
+                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+              >
+                imeftui@gmail.com
+              </a>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="space-y-10"
-            >
-              <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">
-                  Email
-                </p>
-                <a
-                  href="mailto:imeftui@gmail.com"
-                  className="text-2xl sm:text-3xl font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  imeftui@gmail.com
-                </a>
-              </div>
+            <div className="h-px bg-foreground/5" />
 
-              {/* Narahubung Section */}
+            {/* Narahubung */}
+            <div>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
+                Narahubung
+              </p>
+              <p className="text-xs text-muted-foreground/70 mb-3">
+                Klik untuk salin Line ID
+              </p>
               <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">
-                  Narahubung
-                </p>
-                <div className="space-y-3">
-                  {narahubung.map((contact, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 p-4 glass-card rounded-2xl"
-                    >
-                      <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                        <User className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="font-medium text-foreground">
-                          {contact.name}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Line: {contact.line}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {narahubung.map((contact) => (
+                  <LineContact
+                    key={contact.name}
+                    name={contact.name}
+                    lineId={contact.line}
+                  />
+                ))}
               </div>
+            </div>
 
-              {/* Social Section */}
-              <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">
-                  Sosial Media
-                </p>
-                <div className="flex flex-wrap gap-x-8 gap-y-3">
-                  <Link
-                    href="https://www.instagram.com/imeftui/"
-                    target="_blank"
-                    className="group inline-flex items-center gap-2 text-lg text-foreground hover:text-primary transition-colors"
-                  >
-                    Instagram
-                    <ArrowUpRight className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/"
-                    target="_blank"
-                    className="group inline-flex items-center gap-2 text-lg text-foreground hover:text-primary transition-colors"
-                  >
-                    LinkedIn
-                    <ArrowUpRight className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
+            <div className="h-px bg-foreground/5" />
+
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <Link
+                href="https://www.instagram.com/imeftui/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Instagram
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                LinkedIn
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
-        </section>
-
-        <Footer />
+        </motion.section>
       </div>
+
+      <Footer />
     </main>
   );
 }

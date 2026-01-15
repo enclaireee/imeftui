@@ -157,13 +157,17 @@ export const Header = memo(function Header() {
   return (
     <>
       <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl">
-        <nav className="relative rounded-2xl px-3 sm:px-5 py-2.5 flex items-center justify-between bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-lg shadow-black/[0.03] dark:shadow-black/20">
+        <nav className="relative rounded-2xl px-3 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-lg shadow-black/[0.03] dark:shadow-black/20">
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/[0.03] via-transparent to-secondary/[0.03] pointer-events-none" />
 
           {/* Logo */}
-          <Link href="/" className="relative flex items-center group z-10">
-            <div className="relative w-[90px] h-[45px] transition-transform duration-300 group-hover:scale-105">
+          <Link
+            href="/recruitment"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="relative flex items-center group z-10"
+          >
+            <div className="relative w-[75px] h-[38px] sm:w-[90px] sm:h-[45px] transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logoNama.webp"
                 alt="IME FTUI"
