@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 import { gallery } from "../data";
 
-// Memoized card component with image and hover overlay
 const MarqueeCard = memo(function MarqueeCard({
   item,
 }: {
@@ -14,15 +13,14 @@ const MarqueeCard = memo(function MarqueeCard({
 }) {
   return (
     <div className="relative w-64 sm:w-80 h-48 sm:h-56 shrink-0 rounded-2xl overflow-hidden group cursor-pointer">
-      {/* Background Image */}
       <Image
         src={item.image}
         alt={item.title}
         fill
+        loading="lazy"
         sizes="(max-width: 640px) 256px, 320px"
         className="object-cover transition-transform duration-300 group-hover:scale-105"
       />
-      {/* Hover Overlay */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
         <span className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
           {item.title}
@@ -66,7 +64,6 @@ export const GallerySection = memo(function GallerySection() {
         </motion.div>
       </div>
 
-      {/* Desktop View - CSS animation */}
       <div className="hidden md:block relative">
         <div className="flex gap-4 animate-marquee-desktop w-max">
           {duplicatedGallery.map((item, index) => (
@@ -75,7 +72,6 @@ export const GallerySection = memo(function GallerySection() {
         </div>
       </div>
 
-      {/* Mobile View - CSS animations */}
       <div className="md:hidden space-y-4">
         <div className="relative overflow-hidden">
           <div className="flex gap-4 animate-marquee pause-on-hover w-max">

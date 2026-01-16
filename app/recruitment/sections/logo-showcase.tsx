@@ -21,6 +21,7 @@ export const LogoShowcase = memo(function LogoShowcase() {
                   alt={div.abbr}
                   width={96}
                   height={96}
+                  loading="lazy"
                   className="hidden dark:block object-contain w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 <Image
@@ -28,6 +29,7 @@ export const LogoShowcase = memo(function LogoShowcase() {
                   alt={div.abbr}
                   width={96}
                   height={96}
+                  loading="lazy"
                   className="block dark:hidden object-contain w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>

@@ -34,6 +34,7 @@ const DivisiCard = memo(function DivisiCard({
           alt={div.abbr}
           width={56}
           height={56}
+          loading="lazy"
           className="hidden dark:block object-contain w-full h-full"
         />
         <Image
@@ -41,6 +42,7 @@ const DivisiCard = memo(function DivisiCard({
           alt={div.abbr}
           width={56}
           height={56}
+          loading="lazy"
           className="block dark:hidden object-contain w-full h-full"
         />
       </div>
@@ -139,6 +141,7 @@ export const DivisiSection = memo(function DivisiSection() {
                         alt={selectedDivisi.abbr}
                         width={80}
                         height={80}
+                        loading="eager"
                         className="hidden dark:block object-contain w-full h-full p-2"
                       />
                       <Image
@@ -146,6 +149,7 @@ export const DivisiSection = memo(function DivisiSection() {
                         alt={selectedDivisi.abbr}
                         width={80}
                         height={80}
+                        loading="eager"
                         className="block dark:hidden object-contain w-full h-full p-2"
                       />
                     </div>

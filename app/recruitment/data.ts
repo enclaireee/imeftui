@@ -37,7 +37,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Academic Skill", "Professional Networking"],
     logoDark: "/akproDark.webp",
     logoLight: "/akproLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1TrGwnfBgHg0ShxodbGTqSGMv4MowoNWr",
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Copywriting", "Issue Analysis"],
     logoDark: "/kastratDark.webp",
     logoLight: "/kastratLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1-T4b-zOoXCqHg2LvkzNPwo75zI-NckXx",
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ export const divisi: Divisi[] = [
     addedValues: ["People Management", "Critical Thinking"],
     logoDark: "/kemaDark.webp",
     logoLight: "/kemaLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1v3rUSy6eD2spY-SDRZC-PkpuWz1eOscr",
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Mental health Awareness", "Advocating Student Needs"],
     logoDark: "/kesmaDark.webp",
     logoLight: "/kesmaLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1JetjJpymaCJCdp89OyVEBJLH9dC_9QJb",
   },
   {
     id: 5,
@@ -85,7 +85,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Copywriting", "Administrasi"],
     logoDark: "/kestariDark.webp",
     logoLight: "/kestariLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1t4QP1xB-IQCQYMeM0p4f1eMK4Ik_CQ35",
   },
   {
     id: 6,
@@ -97,7 +97,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Graphic Design", "Relasi dengan Alumni"],
     logoDark: "/kominDark.webp",
     logoLight: "/kominLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1Hi-f8E0clGLqabfwh13CAgBfCJiJidi0",
   },
   {
     id: 7,
@@ -109,7 +109,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Consulting", "Structured Problem Solving"],
     logoDark: "/litbangDark.webp",
     logoLight: "/litbangLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1yCgFc-QgIr_yoJVuIqfVu8Ew6sCvwohT",
   },
   {
     id: 8,
@@ -121,7 +121,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Environmental Awareness", "Communication"],
     logoDark: "/pengmasDark.webp",
     logoLight: "/pengmasLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1-FcIe95CIsJ-IrTsA3IL5xICvJlEyv5T",
   },
   {
     id: 9,
@@ -133,7 +133,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Project management", "Communication"],
     logoDark: "/piptekDark.webp",
     logoLight: "/piptekLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/12KIjqRytVVJhTRp72ymRcvjjoW2op8Cw",
   },
   {
     id: 10,
@@ -145,7 +145,7 @@ export const divisi: Divisi[] = [
     addedValues: ["leadership", "Critical Thinking"],
     logoDark: "/retroDark.webp",
     logoLight: "/retroLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1EDDlWILzghECa9gf7zQ5DtFySjH7b3Qp",
   },
   {
     id: 11,
@@ -157,7 +157,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Project Management", "Talent Management"],
     logoDark: "/siwaDark.webp",
     logoLight: "/siwaLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1IjTTU3DzlxY7E5MxZX0sTjr3qZwX3WoW",
   },
   {
     id: 12,
@@ -169,7 +169,7 @@ export const divisi: Divisi[] = [
     addedValues: ["Financial Management", "Entrepreneurship"],
     logoDark: "/wirusDark.webp",
     logoLight: "/wirusLight.webp",
-    tugasUrl: "",
+    tugasUrl: "https://drive.google.com/drive/folders/1HN_q-dkDWc502y7yWB78_CqZw3odkvcM",
   },
 ];
 
