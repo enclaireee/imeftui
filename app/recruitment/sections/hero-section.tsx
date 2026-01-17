@@ -175,7 +175,7 @@ export const HeroSection = memo(function HeroSection() {
               <div className="glass-card px-5 py-2 rounded-2xl flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm sm:text-base font-medium text-foreground">
-                  Registration Open
+                  Open House Day 2
                 </span>
               </div>
               <Countdown targetDate={RECRUITMENT_DEADLINE} />
