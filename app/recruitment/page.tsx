@@ -21,7 +21,6 @@ export default function RecruitmentPage() {
       <Header />
       <HeroSection />
       <div className="bg-gradient-content bg-noise relative overflow-hidden">
-        {/* Background Blobs for Glass Effect - Reduced blur for performance */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] bg-primary/30 rounded-full blur-[80px] opacity-50 dark:opacity-20" />
           <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-secondary/30 rounded-full blur-[80px] opacity-40 dark:opacity-20" />
