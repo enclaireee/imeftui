@@ -37,10 +37,6 @@ export const TimelineSection = memo(function TimelineSection() {
           <div className="relative">
             {/* Connecting Line */}
             <div className="absolute top-6 left-0 right-0 h-0.5 bg-border" />
-            <div
-              className="absolute top-6 left-0 h-0.5 bg-primary transition-all"
-              style={{ width: "20%" }}
-            />
 
             <div className="grid grid-cols-5 gap-4">
               {timeline.map((item, index) => (
