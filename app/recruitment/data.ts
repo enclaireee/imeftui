@@ -4,7 +4,7 @@ import { Link, Handshake, ClipboardList, Building } from "lucide-react";
 // true = buttons redirect to form, false = buttons show "Coming Soon" toast
 export const REGISTRATION_OPEN = false;
 
-export const RECRUITMENT_DEADLINE = new Date("2026-01-16T18:59:59");
+export const RECRUITMENT_DEADLINE = new Date("2026-01-17T18:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/h8QMy68MRfBip7Qq5";
 
 export const stats = [
@@ -179,13 +179,13 @@ export const timeline = [
     event: "Open House",
     description:
       "Presentasi dan tanya-tanya setiap bidang IME FTUI melalui zoom meeting",
-    status: "active",
+    status: "upcoming",
   },
   {
     date: "18 Januari 2026",
     event: "Open Recruitment",
     description: "Pendaftaran BP IME FTUI 2026 resmi dibuka",
-    status: "upcoming",
+    status: "active",
   },
   {
     date: "25 Januari 2026",
