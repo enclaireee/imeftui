@@ -1,8 +1,7 @@
 import { Link, Handshake, ClipboardList, Building } from "lucide-react";
 
-// Toggle this to control registration status
-// true = buttons redirect to form, false = buttons show "Coming Soon" toast
-export const REGISTRATION_OPEN = false;
+
+export const REGISTRATION_OPEN = true;
 
 export const RECRUITMENT_DEADLINE = new Date("2026-01-25T23:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/h8QMy68MRfBip7Qq5";
