@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   ExternalLink,
-  Github,
 } from "lucide-react";
 import { REGISTRATION_FORM_URL } from "@/app/recruitment/data";
 
@@ -66,14 +65,6 @@ export const Footer = memo(function Footer() {
             <p className="text-gray-400 text-xs">
               © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
             </p>
-            <Link
-              href="https://github.com/enclaireee"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-black transition-colors"
-            >
-              <Github className="w-4 h-4" />
-            </Link>
           </div>
         </div>
 
@@ -174,14 +165,6 @@ export const Footer = memo(function Footer() {
             <p className="text-gray-500 text-sm">
               © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
             </p>
-            <Link
-              href="https://github.com/enclaireee"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </Link>
           </div>
         </div>
       </div>
