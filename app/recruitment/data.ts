@@ -184,7 +184,7 @@ export const timeline = [
     date: "18 Januari 2026",
     event: "Open Recruitment",
     description: "Pendaftaran BP IME FTUI 2026 resmi dibuka",
-    status: "active",
+    status: "upcoming",
   },
   {
     date: "25 Januari 2026",
@@ -193,10 +193,10 @@ export const timeline = [
     status: "upcoming",
   },
   {
-    date: "26 Januari 2026",
+    date: "27 Januari 2026",
     event: "Seleksi Wawancara",
     description: "Interview pendaftar dengan bidang pilihan",
-    status: "upcoming",
+    status: "active",
   },
   {
     date: "7 Februari 2026",
