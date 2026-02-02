@@ -3,7 +3,7 @@ import { Link, Handshake, ClipboardList, Building } from "lucide-react";
 
 export const REGISTRATION_OPEN = true;
 
-export const RECRUITMENT_DEADLINE = new Date("2026-01-25T23:59:59");
+export const RECRUITMENT_DEADLINE = new Date("2026-06-25T23:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/h8QMy68MRfBip7Qq5";
 
 export const stats = [
@@ -196,13 +196,13 @@ export const timeline = [
     date: "27 Januari 2026",
     event: "Seleksi Wawancara",
     description: "Interview pendaftar dengan bidang pilihan",
-    status: "active",
+    status: "upcoming",
   },
   {
     date: "7 Februari 2026",
     event: "Forum Group Discussion Calon BP IME FTUI",
     description: "Forum Group Discussion Calon BP diadakan secara offline",
-    status: "upcoming",
+    status: "active",
   },
 ];
 
