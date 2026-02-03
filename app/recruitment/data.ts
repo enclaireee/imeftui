@@ -3,7 +3,7 @@ import { Link, Handshake, ClipboardList, Building } from "lucide-react";
 
 export const REGISTRATION_OPEN = true;
 
-export const RECRUITMENT_DEADLINE = new Date("2026-02-6T23:59:59");
+export const RECRUITMENT_DEADLINE = new Date("2026-02-06T23:59:59");
 export const REGISTRATION_FORM_URL = "https://forms.gle/h8QMy68MRfBip7Qq5";
 
 export const stats = [
