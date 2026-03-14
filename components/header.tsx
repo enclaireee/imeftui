@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from "motion/react";
 const navItems: { label: string; href: string; hash: string | null }[] = [
   { label: "Home", href: "/", hash: null },
   { label: "About", href: "/wip", hash: null },
-  { label: "Dashboard", href: "/dashboard", hash: null },
-  { label: "IME Hub", href: "/imehub", hash: null },
-  { label: "Contact", href: "/contact", hash: null },
+  { label: "Dashboard", href: "/wip", hash: null },
+  { label: "IME Hub", href: "/wip", hash: null },
+  { label: "Contact", href: "/wip", hash: null },
 ];
 
 // Animated nav link with sliding underline
@@ -132,7 +132,7 @@ export const Header = memo(function Header() {
     <>
       <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
         <nav className="relative rounded-[20px] px-4 sm:px-8 py-3 flex items-center justify-between glass shadow-xl shadow-black/30 w-full overflow-hidden">
-          
+
           {/* Subtle inner highlight simulating light hitting the top edge */}
           <div className="absolute top-0 left-0 right-0 h-px bg-white/10 pointer-events-none" />
 
@@ -153,7 +153,7 @@ export const Header = memo(function Header() {
                 priority
               />
             </div>
-            
+
             {/* Stacked Text */}
             <div className="flex flex-col -gap-0.5 mt-0.5">
               <span className="text-white font-bold leading-none text-[15px] sm:text-[17px] tracking-wide">
