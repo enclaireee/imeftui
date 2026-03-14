@@ -117,8 +117,8 @@ export const imeOrganizationSchema: OrganizationSchema = {
   logo: "https://imeftui.com/logo.png",
   description: "Ikatan Mahasiswa Elektro Fakultas Teknik Universitas Indonesia",
   sameAs: [
-    "https://www.instagram.com/nest_ui/",
-    "https://www.linkedin.com/company/nest-ui",
+    "https://www.instagram.com/imeftui/",
+    "https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/",
   ],
 };
 
@@ -129,23 +129,3 @@ export const imeWebsiteSchema: WebSiteSchema = {
   description: "Official website of Ikatan Mahasiswa Elektro FTUI",
 };
 
-export const recruitmentEventSchema: EventSchema = {
-  type: "Event",
-  name: "Open Recruitment IME FTUI 2026",
-  description:
-    "Bergabunglah dengan Ikatan Mahasiswa Elektro FTUI 2026. Daftar sekarang dan jadilah bagian dari keluarga IME!",
-  startDate: "2026-01-15",
-  endDate: "2026-02-15",
-  eventStatus: "EventScheduled",
-  eventAttendanceMode: "MixedEventAttendanceMode",
-  location: {
-    type: "Place",
-    name: "Fakultas Teknik Universitas Indonesia",
-  },
-  organizer: {
-    type: "Organization",
-    name: "IME FTUI",
-    url: "https://imeftui.com",
-  },
-  image: "https://imeftui.com/opengraph-image",
-};

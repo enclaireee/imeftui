@@ -6,167 +6,133 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  ExternalLink,
+  Youtube,
 } from "lucide-react";
-import { REGISTRATION_FORM_URL } from "@/app/recruitment/data";
+
+// Custom SVGs for X and TikTok since they may not exist natively in all Lucide versions
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
+
+const SOCIAL_LINKS = [
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@imeftui3985",
+    Icon: <Youtube className="w-5 h-5 md:w-6 md:h-6" />,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/imeftui/",
+    Icon: <Instagram className="w-5 h-5 md:w-6 md:h-6" />,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/",
+    Icon: <Linkedin className="w-5 h-5 md:w-6 md:h-6" />,
+  },
+  {
+    name: "X (Twitter)",
+    href: "https://x.com/IMEFTUI",
+    Icon: <XIcon />,
+  },
+];
 
 export const Footer = memo(function Footer() {
-  const links = [
-    { label: "Bidang", href: "#divisi" },
-    { label: "Timeline", href: "#timeline" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Daftar Sekarang", href: REGISTRATION_FORM_URL },
-  ];
-
   return (
-    <footer className="pt-10 md:pt-16 pb-6 md:pb-8 border-t border-gray-200 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Mobile Footer - Compact */}
-        <div className="md:hidden space-y-5">
-          <div className="space-y-2">
-            <Link href="/" className="block">
-              <Image
-                src="/logoNamaLight.webp"
-                alt="IME FTUI Logo"
-                width={100}
-                height={40}
-                className="h-9 w-auto object-contain"
-              />
-            </Link>
-            <p className="text-gray-500 text-xs">
-                Ikatan Mahasiswa Elektro FTUI merupakan organisasi kemahasiswaan yang bertujuan untuk mewadahi,  melayani, dan membina mahasiswa Departemen Teknik Elektro.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link
-              href="https://www.instagram.com/imeftui/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black transition-colors"
-            >
-              <Instagram className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </Link>
-            <a
-              href="mailto:imeftui@gmail.com"
-              className="text-gray-500 hover:text-black transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-          </div>
-          <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-            <p className="text-gray-400 text-xs">
-              © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
-            </p>
+    <footer className="w-full bg-background pt-20 pb-0 px-0 relative z-20">
+
+      {/* Main Container */}
+      <div className="relative w-full bg-[#262f68] rounded-t-[2rem] md:rounded-t-[3rem] px-6 py-12 md:px-16 md:py-16 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] overflow-visible">
+
+        {/* Overlapping Top Logo */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[50%] z-30">
+          <div className="relative w-32 h-32 md:w-48 md:h-48">
+            <Image
+              src="/logo.png"
+              alt="Wolf Logo"
+              fill
+              className="object-contain drop-shadow-2xl"
+              sizes="(max-width: 768px) 128px, 192px"
+            />
           </div>
         </div>
 
-        {/* Desktop Footer - Full */}
-        <div className="hidden md:block">
-          <div className="grid grid-cols-12 gap-12 mb-16">
-            <div className="col-span-5 space-y-6">
-              <Link href="/" className="block">
-                <Image
-                  src="/logoNamaLight.webp"
-                  alt="IME FTUI Logo"
-                  width={140}
-                  height={60}
-                  className="h-12 w-auto object-contain"
-                />
-              </Link>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
-                Ikatan Mahasiswa Elektro FTUI merupakan organisasi kemahasiswaan yang bertujuan untuk mewadahi,  melayani, dan membina mahasiswa Departemen Teknik Elektro.
+        {/* Content Grid */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-white/90">
+
+          {/* Left Column: Tautan */}
+          <div className="flex flex-col gap-3 text-center md:text-left pt-6 md:pt-0">
+            <h3 className="font-bold text-white text-base tracking-wide mb-1">Tautan</h3>
+            <Link href="#about" className="hover:text-white transition-colors text-base">About Us</Link>
+            <Link href="/dashboard" className="hover:text-white transition-colors text-base">Dashboard</Link>
+            <Link href="/imehub" className="hover:text-white transition-colors text-base">ImeHub</Link>
+            <Link href="/contact" className="hover:text-white transition-colors text-base">Contact</Link>
+          </div>
+
+          {/* Center Column: IME FTUI */}
+          <div className="flex flex-col items-center justify-center text-center mt-6 md:mt-0">
+            <h2 className="text-3xl md:text-5xl font-black italic tracking-tight text-white mb-1">
+              IME FTUI 2026
+            </h2>
+            <p className="font-bold text-base md:text-lg text-white mb-6">
+              #MenjejakAsa
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-3 md:gap-4">
+              {SOCIAL_LINKS.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  className="bg-white text-[#262f68] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center border-2 border-transparent hover:border-white hover:bg-[#1a2359] hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transition-all duration-300"
+                >
+                  {item.Icon}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Sekretariat */}
+          <div className="flex flex-col gap-4 text-center md:text-left md:items-start items-center pt-6 md:pt-0">
+            <h3 className="font-bold text-white text-base tracking-wide uppercase">
+              SEKRETARIAT
+            </h3>
+
+            <div className="flex items-start gap-3">
+              <div className="bg-white p-2 rounded-full text-[#262f68] shrink-0">
+                <MapPin className="w-5 h-5 md:w-6 md:h-6" />
+              </div>
+              <p className="text-sm leading-snug">
+                Sekretariat IME FTUI<br />
+                Gedung Student Center Lt. 2<br />
+                Fakultas Teknik UI, Depok 16424
               </p>
-              <div className="flex items-center gap-4">
-                <Link
-                  href="https://www.instagram.com/imeftui/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
-                >
-                  <Instagram className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/company/ikatan-mahasiswa-elektro-ftui-ime-ftui/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </Link>
-                <a
-                  href="mailto:imeftui@gmail.com"
-                  className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 hover:text-black hover:border-gray-300 hover:bg-gray-100 transition-all duration-300"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
             </div>
 
-            <div className="col-span-2" />
-
-            <div className="col-span-2">
-              <h3 className="font-bold text-gray-900 mb-6 text-sm tracking-wide uppercase">
-                Tautan
-              </h3>
-              <ul className="space-y-4">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-600 hover:text-black text-sm flex items-center gap-1 group transition-colors"
-                    >
-                      {link.label}
-                      {link.href.startsWith("http") && (
-                        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="col-span-3">
-              <h3 className="font-bold text-gray-900 mb-6 text-sm tracking-wide uppercase">
-                Sekretariat
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Sekretariat IME FTUI
-                    <br />
-                    Gedung Student Center Lt. 2
-                    <br />
-                    Fakultas Teknik UI, Depok 16424
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-gray-400 shrink-0" />
-                  <a
-                    href="mailto:imeftui@gmail.com"
-                    className="text-gray-600 hover:text-black text-sm transition-colors"
-                  >
-                    imeftui@gmail.com
-                  </a>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="bg-transparent border-2 border-white p-1 rounded min-w-8 flex justify-center text-white shrink-0">
+                <Mail className="w-5 h-5" />
               </div>
+              <a href="mailto:imeftui@gmail.com" className="text-sm hover:text-white transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-white">
+                imeftui@gmail.com
+              </a>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
-            <p className="text-gray-500 text-sm">
-              © 2026 Ikatan Mahasiswa Elektro FTUI. All rights reserved.
-            </p>
-          </div>
         </div>
+
+        {/* Made by text */}
+        <div className="mt-12 text-center border-t border-white/10 pt-6">
+          <p className="text-white/60 italic text-xs">
+            Made by IME FTUI
+          </p>
+        </div>
+
       </div>
     </footer>
   );

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Merriweather } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import {
   JsonLd,
@@ -92,36 +94,16 @@ export default function RootLayout({
     <html lang="id" suppressHydrationWarning>
       <head>
         <JsonLd data={[imeOrganizationSchema, imeWebsiteSchema]} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var stored = localStorage.getItem('theme');
-                  var html = document.documentElement;
 
-                  if (stored === 'light') {
-                    html.classList.add('light');
-                  } else if (stored === 'dark') {
-                    html.classList.add('dark');
-                  } else {
-                    // No stored preference - use system preference
-                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    html.classList.add(prefersDark ? 'dark' : 'light');
-                  }
-                } catch (e) {
-                  // Fallback to dark mode if localStorage fails
-                  document.documentElement.classList.add('dark');
-                }
-              })();
-            `,
-          }}
-        />
       </head>
       <body
         className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
       >
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LenisProvider>
         <Toaster position="top-center" />
       </body>
     </html>

@@ -1,55 +1,14 @@
 "use client";
 
-import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Home, ArrowLeft, Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Home, ArrowLeft } from "lucide-react";
 
-const NotFoundPage = memo(function NotFoundPage() {
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsDark(document.documentElement.classList.contains("dark"));
-  }, []);
-
-  const toggleTheme = () => {
-    const html = document.documentElement;
-    if (isDark) {
-      html.classList.remove("dark");
-      html.classList.add("light");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.remove("light");
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
-  };
-
+export default function NotFoundPage() {
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]" />
-      </div>
-
-      {/* Theme toggle */}
-      <button
-        onClick={toggleTheme}
-        className="absolute top-6 right-6 p-3 rounded-full bg-background/50 border border-border backdrop-blur-sm z-50 hover:bg-background/80 transition-all cursor-pointer"
-        aria-label="Toggle Theme"
-      >
-        {isDark ? (
-          <Sun className="w-5 h-5 text-yellow-500" />
-        ) : (
-          <Moon className="w-5 h-5 text-primary" />
-        )}
-      </button>
-
       <div className="relative z-10 max-w-md mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,14 +22,7 @@ const NotFoundPage = memo(function NotFoundPage() {
             alt="IME FTUI"
             width={100}
             height={50}
-            className="hidden dark:block object-contain opacity-80"
-          />
-          <Image
-            src="/logoNamaLight.webp"
-            alt="IME FTUI"
-            width={100}
-            height={50}
-            className="block dark:hidden object-contain opacity-80"
+            className="object-contain opacity-80"
           />
 
           {/* 404 */}
@@ -123,6 +75,4 @@ const NotFoundPage = memo(function NotFoundPage() {
       </div>
     </main>
   );
-});
-
-export default NotFoundPage;
+}
