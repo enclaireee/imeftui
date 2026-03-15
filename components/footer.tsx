@@ -41,29 +41,29 @@ const SOCIAL_LINKS = [
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="w-full bg-background pt-20 pb-0 px-0 relative z-20">
+    <footer className="w-full bg-background pt-16 md:pt-20 pb-0 px-0 relative z-20">
 
       {/* Main Container */}
-      <div className="relative w-full bg-[#262f68] rounded-t-[2rem] md:rounded-t-[3rem] px-6 py-12 md:px-16 md:py-16 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] overflow-visible">
+      <div className="relative w-full bg-[#262f68] rounded-t-[1.5rem] md:rounded-t-[3rem] px-4 py-8 md:px-16 md:py-16 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] overflow-visible">
 
         {/* Overlapping Top Logo */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[50%] z-30">
-          <div className="relative w-32 h-32 md:w-48 md:h-48">
+          <div className="relative w-20 h-20 md:w-48 md:h-48">
             <Image
               src="/logo.png"
               alt="Wolf Logo"
               fill
-              className="object-contain drop-shadow-2xl"
-              sizes="(max-width: 768px) 128px, 192px"
+              className="object-contain drop-shadow-xl md:drop-shadow-2xl"
+              sizes="(max-width: 768px) 80px, 192px"
             />
           </div>
         </div>
 
         {/* Content Grid */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-white/90">
+        <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-12 text-white/90 pt-10 md:pt-28 isolate">
 
-          {/* Left Column: Tautan */}
-          <div className="flex flex-col gap-3 text-center md:text-left pt-6 md:pt-0">
+          {/* Left Column: Tautan (Hidden on mobile for compactness) */}
+          <div className="hidden md:flex flex-col gap-3 text-left">
             <h3 className="font-bold text-white text-base tracking-wide mb-1">Tautan</h3>
             <Link href="#about" className="hover:text-white transition-colors text-base">About Us</Link>
             <Link href="/dashboard" className="hover:text-white transition-colors text-base">Dashboard</Link>
@@ -72,16 +72,16 @@ export const Footer = memo(function Footer() {
           </div>
 
           {/* Center Column: IME FTUI */}
-          <div className="flex flex-col items-center justify-center text-center mt-6 md:mt-0">
-            <h2 className="text-3xl md:text-5xl font-black italic tracking-tight text-white mb-1">
+          <div className="flex flex-col items-center justify-center text-center">
+            <h2 className="text-2xl md:text-5xl font-black italic tracking-tight text-white mb-0.5 md:mb-1">
               IME FTUI 2026
             </h2>
-            <p className="font-bold text-base md:text-lg text-white mb-6">
+            <p className="font-bold text-xs md:text-lg text-white/80 md:text-white mb-4 md:mb-6">
               #MenjejakAsa
             </p>
 
             {/* Social Icons */}
-            <div className="flex gap-3 md:gap-4">
+            <div className="flex justify-center gap-3 md:gap-4">
               {SOCIAL_LINKS.map((item, i) => (
                 <Link
                   key={i}
@@ -89,36 +89,31 @@ export const Footer = memo(function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className="bg-white text-[#262f68] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center border-2 border-transparent hover:border-white hover:bg-[#1a2359] hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transition-all duration-300"
+                  className="bg-white text-[#262f68] w-8 h-8 md:w-14 md:h-14 rounded-full flex items-center justify-center border-2 border-transparent hover:border-white hover:bg-[#1a2359] hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-all duration-300"
                 >
-                  {item.Icon}
+                  <div className="scale-[0.6] md:scale-100">{item.Icon}</div>
                 </Link>
               ))}
             </div>
           </div>
 
           {/* Right Column: Sekretariat */}
-          <div className="flex flex-col gap-4 text-center md:text-left md:items-start items-center pt-6 md:pt-0">
-            <h3 className="font-bold text-white text-base tracking-wide uppercase">
-              SEKRETARIAT
+          <div className="flex flex-col gap-2 md:gap-3 items-center md:items-end text-center md:text-right">
+            <h3 className="hidden md:block font-bold text-white text-base tracking-wide uppercase mb-1">
+              Sekretariat
             </h3>
 
-            <div className="flex items-start gap-3">
-              <div className="bg-white p-2 rounded-full text-[#262f68] shrink-0">
-                <MapPin className="w-5 h-5 md:w-6 md:h-6" />
-              </div>
-              <p className="text-sm leading-snug">
-                Sekretariat IME FTUI<br />
+            <div className="flex items-start md:items-start gap-2 md:gap-3 md:flex-row-reverse max-w-[260px] md:max-w-none">
+              <MapPin className="w-3.5 h-3.5 md:w-5 md:h-5 shrink-0 mt-0.5 md:mt-1 text-white/60 md:text-white/70" />
+              <p className="text-[11px] md:text-sm leading-snug text-white/70 md:text-white/80">
                 Gedung Student Center Lt. 2<br />
-                Fakultas Teknik UI, Depok 16424
+                Fakultas Teknik UI, Depok
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="bg-transparent border-2 border-white p-1 rounded min-w-8 flex justify-center text-white shrink-0">
-                <Mail className="w-5 h-5" />
-              </div>
-              <a href="mailto:imeftui@gmail.com" className="text-sm hover:text-white transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-white">
+            <div className="flex items-center gap-2 md:gap-3 md:flex-row-reverse mt-1 md:mt-0">
+              <Mail className="w-3.5 h-3.5 md:w-5 md:h-5 shrink-0 text-white/60 md:text-white/70" />
+              <a href="mailto:imeftui@gmail.com" className="text-[11px] md:text-sm text-white/70 md:text-white hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white">
                 imeftui@gmail.com
               </a>
             </div>
@@ -127,9 +122,9 @@ export const Footer = memo(function Footer() {
         </div>
 
         {/* Made by text */}
-        <div className="mt-12 text-center border-t border-white/10 pt-6">
-          <p className="text-white/60 italic text-xs">
-            Made by IME FTUI
+        <div className="mt-6 md:mt-12 text-center border-t border-white/10 pt-4 md:pt-6">
+          <p className="text-white/40 md:text-white/60 italic text-[10px] md:text-xs">
+            Made by IME FTUI 2026
           </p>
         </div>
 

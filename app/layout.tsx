@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Merriweather } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
-// import { Header } from "@/components/header";
-// import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import {
   JsonLd,
@@ -100,9 +100,9 @@ export default function RootLayout({
         className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
       >
         <LenisProvider>
-          {/* <Header /> */}
+          <Header />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </LenisProvider>
         <Toaster position="top-center" />
       </body>

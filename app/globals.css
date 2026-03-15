@@ -117,6 +117,162 @@
   contain: paint;
 }
 
+/* ── Liquid Glass Header System ── */
+
+@property --liquid-hue {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes liquid-shift {
+  to { --liquid-hue: 360deg; }
+}
+
+/* Main liquid glass nav bar */
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(120, 150, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(28px) saturate(1.4) brightness(1.05);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4) brightness(1.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.15),
+    0 1px 6px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  contain: layout style;
+  will-change: backdrop-filter;
+}
+
+/* Animated gradient border overlay */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--liquid-hue, 0deg),
+    rgba(100, 140, 255, 0.3),
+    rgba(160, 120, 255, 0.15),
+    rgba(100, 200, 255, 0.2),
+    rgba(100, 140, 255, 0.3)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: liquid-shift 8s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+/* Inner refraction highlight */
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Scroll-enhanced state */
+.liquid-glass.header-scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 5, 40, 0.65) 0%,
+    rgba(10, 15, 60, 0.55) 50%,
+    rgba(0, 5, 40, 0.6) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.liquid-glass.header-scrolled::before {
+  opacity: 0.35;
+}
+
+/* Mobile overlay frosted glass */
+.liquid-glass-mobile {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 2, 30, 0.92) 0%,
+    rgba(0, 5, 50, 0.96) 100%
+  );
+  backdrop-filter: blur(40px) saturate(1.5);
+  -webkit-backdrop-filter: blur(40px) saturate(1.5);
+}
+
+/* Glass circle button (hamburger / close) */
+.glass-circle-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+.glass-circle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 16px rgba(100, 140, 255, 0.15);
+}
+
+/* Nav link glow underline */
+.nav-link-glow {
+  position: relative;
+}
+.nav-link-glow::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(100, 140, 255, 0.8), rgba(160, 120, 255, 0.8));
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0px transparent;
+}
+.nav-link-glow:hover::after {
+  width: 100%;
+  box-shadow: 0 0 10px rgba(100, 140, 255, 0.4), 0 0 20px rgba(100, 140, 255, 0.15);
+}
+
+/* Mobile nav decorative orbs */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10px, -15px) scale(1.05); }
+  66% { transform: translate(-8px, 10px) scale(0.95); }
+}
+.mobile-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 140, 255, 0.12), transparent 70%);
+  animation: float-orb 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
 /* Background noise overlay */
 .bg-noise {
   position: relative;
@@ -129,3 +285,4 @@
   opacity: 0.03;
   pointer-events: none;
 }
+
