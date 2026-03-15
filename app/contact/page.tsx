@@ -65,8 +65,18 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.03,
+      staggerChildren: 0.1,
       delayChildren: 0.2,
+    },
+  },
+};
+
+const wordVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.03,
     },
   },
 };
@@ -128,13 +138,13 @@ function CopyButton({
       onClick={handleCopy}
       className="group/btn flex items-center justify-between w-full px-5 py-3.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-white/10 transition-all duration-300"
     >
-      <div className="flex items-center gap-4">
-        <IconComponent className="w-3.5 h-3.5 text-white/30 group-hover/btn:text-[#facc15] transition-colors" />
-        <span className="text-xs text-white/50 group-hover/btn:text-white/80 transition-colors font-medium tracking-tight">
+      <div className="flex items-center gap-4 min-w-0 pr-4">
+        <IconComponent className="w-3.5 h-3.5 flex-shrink-0 text-white/30 group-hover/btn:text-[#facc15] transition-colors" />
+        <span className="text-xs text-left truncate text-white/50 group-hover/btn:text-white/80 transition-colors font-medium tracking-tight">
           {value}
         </span>
       </div>
-      <div className="flex items-center justify-center w-5 h-5 text-white/10 group-hover/btn:text-white/40">
+      <div className="flex items-center justify-center flex-shrink-0 w-5 h-5 text-white/10 group-hover/btn:text-white/40">
         {copied ? (
           <Check className="w-3.5 h-3.5 text-[#facc15]" />
         ) : (
@@ -193,16 +203,31 @@ export default function ContactPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.95] text-white perspective-1000 whitespace-nowrap"
+              className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[1.1] md:leading-[0.95] text-white perspective-1000 flex flex-wrap"
             >
-              {titleText.split("").map((char, index) => (
+              {titleText.split(" ").map((word, wordIndex, array) => (
                 <motion.span
-                  key={index}
-                  variants={letterVariants}
-                  className="inline-block"
-                  style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+                  key={wordIndex}
+                  variants={wordVariants}
+                  className="inline-flex whitespace-nowrap overflow-visible pb-2 pt-1"
                 >
-                  {char}
+                  {word.split("").map((char, charIndex) => (
+                    <motion.span
+                      key={charIndex}
+                      variants={letterVariants}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                  {wordIndex !== array.length - 1 && (
+                    <motion.span
+                      variants={letterVariants}
+                      className="inline-block"
+                    >
+                      {"\u00A0"}
+                    </motion.span>
+                  )}
                 </motion.span>
               ))}
             </motion.h1>

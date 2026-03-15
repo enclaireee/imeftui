@@ -77,6 +77,34 @@ const aboutDividerVariants: Variants = {
   },
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // — Design decision: The dots on either side of the heading pop in
 //   with a tiny scale — they're punctuation marks in the motion sequence.
 //   Quick and snappy (stiffness 120) but no overshoot (damping 15).
