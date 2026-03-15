@@ -21,8 +21,8 @@ export interface BidangDetail {
 
 export const bidangList: BidangCard[] = [
   {
-    title: "Akademi Dan Keprofesian",
-    description: "Website Official Akademi dan Keprofesian",
+    title: "Akademis Dan Keprofesian",
+    description: "Website Official Akademis dan Keprofesian",
     image: "/fotoAkpro.jpg",
     slug: "akpro",
     externalUrl: "https://akproime.com/",
@@ -73,7 +73,7 @@ export const bidangDetails: Record<string, BidangDetail> = {
     links: [
       { label: "Official Instagram KESMA IMEF TUI 2026", url: "https://www.instagram.com/kesma.imeftui" },
       { label: "Kesma Mental Health: Cerita Bersama Kesma 💗", url: "https://bit.ly/CeritaBersamaKESMA2025" },
-      { label: "Zoom Meeting", url: "https://zoom.us" },
+      // { label: "Zoom Meeting", url: "https://zoom.us" },
     ],
   },
   piptek: {
