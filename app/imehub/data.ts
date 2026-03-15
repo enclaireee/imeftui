@@ -39,18 +39,18 @@ export const bidangList: BidangCard[] = [
   //   image: "/fotoLitbang.png",
   //   slug: "litbang",
   // },
-  {
-    title: "Pengembangan Ilmu Pengetahuan Dan Teknologi",
-    description: "Informasi Seputar Lomba Keilmiahan",
-    image: "/fotoPiptek.png",
-    slug: "piptek",
-  },
-  {
-    title: "Keuangan Dan Kewirausahaan",
-    description: "Informasi keuangan lembaga",
-    image: "/fotoWirus.png",
-    slug: "wirus",
-  },
+  // {
+  //   title: "Pengembangan Ilmu Pengetahuan Dan Teknologi",
+  //   description: "Informasi Seputar Lomba Keilmiahan",
+  //   image: "/fotoPiptek.png",
+  //   slug: "piptek",
+  // },
+  // {
+  //   title: "Keuangan Dan Kewirausahaan",
+  //   description: "Informasi keuangan lembaga",
+  //   image: "/fotoWirus.png",
+  //   slug: "wirus",
+  // },
 ];
 
 export const bidangDetails: Record<string, BidangDetail> = {
@@ -80,7 +80,7 @@ export const bidangDetails: Record<string, BidangDetail> = {
     title: "PIPTEK IME FTUI 2026",
     subtitle: "Pengembangan Ilmu Pengetahuan Dan Teknologi IME FTUI 2026",
     logo: "/logoPiptek.webp",
-    sectionTitle: "SOP Kesekretarian 2026",
+    sectionTitle: "Informasi Keilmiahan",
     links: [
       { label: "Zoom Meeting", url: "https://zoom.us" },
       { label: "Zoom Meeting", url: "https://zoom.us" },
