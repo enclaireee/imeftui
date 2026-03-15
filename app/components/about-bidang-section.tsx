@@ -11,7 +11,7 @@ const LOGOS = [
   { src: "/logoKema.webp",    label: "Kema", desc: "Kesejahteraan Mahasiswa" },
   { src: "/logoKesma.webp",   label: "Kesma", desc: "Kesenian Mahasiswa" },
   { src: "/logoKestari.webp", label: "Kestari", desc: "Administrasi dan Kesekretariatan" },
-  { src: "/logoKomin.webp",   label: "Komin", desc: "Komunikasi dan Informasi" },
+  { src: "/logoKomin.png",   label: "Komin", desc: "Komunikasi dan Informasi" },
   { src: "/logoLitbang.webp", label: "Litbang", desc: "Penelitian dan Pengembangan" },
   { src: "/logoPengmas.webp", label: "Pengmas", desc: "Pengabdian Masyarakat" },
   { src: "/logoPiptek.webp",  label: "Piptek", desc: "Pengembangan Ilmu Pengetahuan dan Teknologi" },
