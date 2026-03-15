@@ -16,7 +16,7 @@ const LOGOS = [
   { src: "/logoPengmas.webp", label: "Pengmas", desc: "Pengabdian Masyarakat" },
   { src: "/logoPiptek.webp",  label: "Piptek", desc: "Pengembangan Ilmu Pengetahuan dan Teknologi" },
   { src: "/logoSiwa.webp",    label: "Siwa", desc: "Seni dan Olahraga Mahasiswa" },
-  { src: "/logoWirus.webp",   label: "Wirus", desc: "Wirausaha" },
+  { src: "/logoWirus.webp",   label: "Kewirus", desc: "Wirausaha" },
 ];
 
 // — Design decision: The header block uses a wider stagger (0.2s) to
