@@ -21,10 +21,11 @@ export interface BidangDetail {
 
 export const bidangList: BidangCard[] = [
   {
-    title: "Penelitian Dan Pengembangan",
-    description: "Informasi Terkait QC dan FPT",
-    image: "/fotoLitbang.png",
-    slug: "litbang",
+    title: "Akademi Dan Keprofesian",
+    description: "Website Official Akademi dan Keprofesian",
+    image: "/fotoAkpro.jpg",
+    slug: "akpro",
+    externalUrl: "https://akproime.com/",
   },
   {
     title: "Kesejahteraan Mahasiswa",
@@ -32,6 +33,12 @@ export const bidangList: BidangCard[] = [
     image: "/fotoKesma.png",
     slug: "kesma",
   },
+  // {
+  //   title: "Penelitian Dan Pengembangan",
+  //   description: "Informasi Terkait QC dan FPT",
+  //   image: "/fotoLitbang.png",
+  //   slug: "litbang",
+  // },
   {
     title: "Pengembangan Ilmu Pengetahuan Dan Teknologi",
     description: "Informasi Seputar Lomba Keilmiahan",
@@ -43,13 +50,6 @@ export const bidangList: BidangCard[] = [
     description: "Informasi keuangan lembaga",
     image: "/fotoWirus.png",
     slug: "wirus",
-  },
-  {
-    title: "Akademis Dan Keprofesian",
-    description: "Website Official Akademis dan Keprofesian",
-    image: "/Image2.webp",
-    slug: "akpro",
-    externalUrl: "https://akproime.com/",
   },
 ];
 
@@ -69,10 +69,10 @@ export const bidangDetails: Record<string, BidangDetail> = {
     title: "KESMA IME FTUI 2026",
     subtitle: "Kesejahteraan Mahasiswa IME FTUI 2026",
     logo: "/logoKesma.webp",
-    sectionTitle: "SOP Kesekretarian 2026",
+    sectionTitle: "Advoksi Kesejahteraan dan Finansial",
     links: [
-      { label: "Zoom Meeting", url: "https://zoom.us" },
-      { label: "Zoom Meeting", url: "https://zoom.us" },
+      { label: "Official Instagram KESMA IMEF TUI 2026", url: "https://www.instagram.com/kesma.imeftui" },
+      { label: "Kesma Mental Health: Cerita Bersama Kesma 💗", url: "https://bit.ly/CeritaBersamaKESMA2025" },
       { label: "Zoom Meeting", url: "https://zoom.us" },
     ],
   },
